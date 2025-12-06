@@ -1,0 +1,108 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.2.4">
+  <diagram name="Activity Approve Work" id="dK7EOOWoziJQYTUurLjv">
+    <mxGraphModel dx="1666" dy="1103" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-1" parent="1" style="swimlane;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=20;horizontal=0;horizontalStack=1;html=1;fillColor=#f5f5f5;strokeColor=#666666;" value="Approve Work &amp; Release Funds" vertex="1">
+          <mxGeometry height="760" width="560" x="570" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-2" parent="nfXhxFQ55y6Xx5ccXb4I-1" style="swimlane;startSize=20;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Client" vertex="1">
+          <mxGeometry height="760" width="270" x="20" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-3" parent="nfXhxFQ55y6Xx5ccXb4I-2" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="115" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-4" parent="nfXhxFQ55y6Xx5ccXb4I-2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" value="Receive &quot;Work Delivered&quot;&#xa;Notification" vertex="1">
+          <mxGeometry height="50" width="120" x="70" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-5" parent="nfXhxFQ55y6Xx5ccXb4I-2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" value="Open Job Dashboard" vertex="1">
+          <mxGeometry height="40" width="120" x="70" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-6" parent="nfXhxFQ55y6Xx5ccXb4I-2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" value="Download Files /&#xa;Check Links" vertex="1">
+          <mxGeometry height="50" width="120" x="70" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-7" parent="nfXhxFQ55y6Xx5ccXb4I-2" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" value="Satisfied?" vertex="1">
+          <mxGeometry height="80" width="80" x="90" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-8" parent="nfXhxFQ55y6Xx5ccXb4I-2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" value="Click &quot;Request Revision&quot;" vertex="1">
+          <mxGeometry height="40" width="100" x="10" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-9" parent="nfXhxFQ55y6Xx5ccXb4I-2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontStyle=1" value="Click &quot;Approve&quot;" vertex="1">
+          <mxGeometry height="40" width="100" x="160" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-10" parent="nfXhxFQ55y6Xx5ccXb4I-2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" value="Submit Rating&#xa;(1-5 Stars)" vertex="1">
+          <mxGeometry height="40" width="100" x="160" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-17" edge="1" parent="nfXhxFQ55y6Xx5ccXb4I-2" source="nfXhxFQ55y6Xx5ccXb4I-3" target="nfXhxFQ55y6Xx5ccXb4I-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-18" edge="1" parent="nfXhxFQ55y6Xx5ccXb4I-2" source="nfXhxFQ55y6Xx5ccXb4I-4" target="nfXhxFQ55y6Xx5ccXb4I-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-19" edge="1" parent="nfXhxFQ55y6Xx5ccXb4I-2" source="nfXhxFQ55y6Xx5ccXb4I-5" target="nfXhxFQ55y6Xx5ccXb4I-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-20" edge="1" parent="nfXhxFQ55y6Xx5ccXb4I-2" source="nfXhxFQ55y6Xx5ccXb4I-6" target="nfXhxFQ55y6Xx5ccXb4I-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-21" edge="1" parent="nfXhxFQ55y6Xx5ccXb4I-2" source="nfXhxFQ55y6Xx5ccXb4I-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="nfXhxFQ55y6Xx5ccXb4I-8" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-24" edge="1" parent="nfXhxFQ55y6Xx5ccXb4I-2" source="nfXhxFQ55y6Xx5ccXb4I-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="nfXhxFQ55y6Xx5ccXb4I-9" value="Yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-25" edge="1" parent="nfXhxFQ55y6Xx5ccXb4I-2" source="nfXhxFQ55y6Xx5ccXb4I-9" target="nfXhxFQ55y6Xx5ccXb4I-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-11" parent="nfXhxFQ55y6Xx5ccXb4I-1" style="swimlane;startSize=20;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="System" vertex="1">
+          <mxGeometry height="760" width="270" x="290" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-12" parent="nfXhxFQ55y6Xx5ccXb4I-11" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;" value="Notify Freelancer&#xa;(Funds Locked)" vertex="1">
+          <mxGeometry height="40" width="100" x="20" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-13" parent="nfXhxFQ55y6Xx5ccXb4I-11" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontStyle=1" value="Transfer Funds:&#xa;Escrow -&gt; Freelancer" vertex="1">
+          <mxGeometry height="50" width="110" x="150" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-14" parent="nfXhxFQ55y6Xx5ccXb4I-11" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;" value="Update Job Status:&#xa;&quot;Completed&quot;" vertex="1">
+          <mxGeometry height="40" width="110" x="150" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-30" edge="1" parent="nfXhxFQ55y6Xx5ccXb4I-11" source="nfXhxFQ55y6Xx5ccXb4I-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="nfXhxFQ55y6Xx5ccXb4I-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-15" parent="nfXhxFQ55y6Xx5ccXb4I-11" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;" value="Notify Freelancer:&#xa;&quot;Payment Received&quot;" vertex="1">
+          <mxGeometry height="40" width="110" x="150" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-16" parent="nfXhxFQ55y6Xx5ccXb4I-11" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="20" y="705" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-23" edge="1" parent="nfXhxFQ55y6Xx5ccXb4I-11" source="nfXhxFQ55y6Xx5ccXb4I-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="nfXhxFQ55y6Xx5ccXb4I-16">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="70" y="550" />
+              <mxPoint x="35" y="550" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-27" edge="1" parent="nfXhxFQ55y6Xx5ccXb4I-11" source="nfXhxFQ55y6Xx5ccXb4I-13" target="nfXhxFQ55y6Xx5ccXb4I-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-28" edge="1" parent="nfXhxFQ55y6Xx5ccXb4I-11" source="nfXhxFQ55y6Xx5ccXb4I-14" target="nfXhxFQ55y6Xx5ccXb4I-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-22" edge="1" parent="nfXhxFQ55y6Xx5ccXb4I-1" source="nfXhxFQ55y6Xx5ccXb4I-8" target="nfXhxFQ55y6Xx5ccXb4I-12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="80" y="620" />
+              <mxPoint x="190" y="600" />
+              <mxPoint x="270" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nfXhxFQ55y6Xx5ccXb4I-26" edge="1" parent="nfXhxFQ55y6Xx5ccXb4I-1" source="nfXhxFQ55y6Xx5ccXb4I-10" target="nfXhxFQ55y6Xx5ccXb4I-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

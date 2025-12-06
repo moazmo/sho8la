@@ -1,0 +1,108 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.2.4">
+  <diagram name="Activity Verify ID" id="SR2rRkKk_uZosEzKeU_r">
+    <mxGraphModel dx="1025" dy="761" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-1" parent="1" style="swimlane;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=20;horizontal=0;horizontalStack=1;html=1;fillColor=#f5f5f5;strokeColor=#666666;" value="Verify Student ID Process" vertex="1">
+          <mxGeometry height="720" width="560" x="480" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-2" parent="vOAIPK-nI9PuliQ_U_Pk-1" style="swimlane;startSize=20;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Admin" vertex="1">
+          <mxGeometry height="720" width="270" x="20" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-3" parent="vOAIPK-nI9PuliQ_U_Pk-2" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="115" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-4" parent="vOAIPK-nI9PuliQ_U_Pk-2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" value="Open Verification&#xa;Queue" vertex="1">
+          <mxGeometry height="40" width="120" x="70" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-5" parent="vOAIPK-nI9PuliQ_U_Pk-2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" value="Select User to Review" vertex="1">
+          <mxGeometry height="40" width="120" x="70" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-6" parent="vOAIPK-nI9PuliQ_U_Pk-2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" value="Compare Name vs&#xa;ID Card Image" vertex="1">
+          <mxGeometry height="50" width="120" x="70" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-7" parent="vOAIPK-nI9PuliQ_U_Pk-2" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" value="Approved?" vertex="1">
+          <mxGeometry height="80" width="80" x="90" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-8" parent="vOAIPK-nI9PuliQ_U_Pk-2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" value="Click &quot;Reject&quot;" vertex="1">
+          <mxGeometry height="40" width="100" x="15" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-9" parent="vOAIPK-nI9PuliQ_U_Pk-2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" value="Enter Rejection&#xa;Reason" vertex="1">
+          <mxGeometry height="40" width="100" x="15" y="625" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-10" parent="vOAIPK-nI9PuliQ_U_Pk-2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" value="Click &quot;Approve&quot;" vertex="1">
+          <mxGeometry height="40" width="100" x="160" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-18" edge="1" parent="vOAIPK-nI9PuliQ_U_Pk-2" source="vOAIPK-nI9PuliQ_U_Pk-3" target="vOAIPK-nI9PuliQ_U_Pk-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-24" edge="1" parent="vOAIPK-nI9PuliQ_U_Pk-2" source="vOAIPK-nI9PuliQ_U_Pk-6" target="vOAIPK-nI9PuliQ_U_Pk-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-25" edge="1" parent="vOAIPK-nI9PuliQ_U_Pk-2" source="vOAIPK-nI9PuliQ_U_Pk-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="vOAIPK-nI9PuliQ_U_Pk-8" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-29" edge="1" parent="vOAIPK-nI9PuliQ_U_Pk-2" source="vOAIPK-nI9PuliQ_U_Pk-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="vOAIPK-nI9PuliQ_U_Pk-10" value="Yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-26" edge="1" parent="vOAIPK-nI9PuliQ_U_Pk-2" source="vOAIPK-nI9PuliQ_U_Pk-8" target="vOAIPK-nI9PuliQ_U_Pk-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-11" parent="vOAIPK-nI9PuliQ_U_Pk-1" style="swimlane;startSize=20;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="System" vertex="1">
+          <mxGeometry height="720" width="270" x="290" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-12" parent="vOAIPK-nI9PuliQ_U_Pk-11" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;" value="Fetch Pending&#xa;Requests" vertex="1">
+          <mxGeometry height="40" width="120" x="75" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-13" parent="vOAIPK-nI9PuliQ_U_Pk-11" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;" value="Display List of&#xa;Students" vertex="1">
+          <mxGeometry height="40" width="120" x="75" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-14" parent="vOAIPK-nI9PuliQ_U_Pk-11" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;" value="Display ID Image &amp;&#xa;Profile Data" vertex="1">
+          <mxGeometry height="40" width="120" x="75" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-15" parent="vOAIPK-nI9PuliQ_U_Pk-11" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;" value="Set Status: &quot;Rejected&quot;&#xa;&amp; Send Notification" vertex="1">
+          <mxGeometry height="50" width="120" x="10" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-16" parent="vOAIPK-nI9PuliQ_U_Pk-11" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;" value="Set Status: &quot;Verified&quot;&#xa;&amp; Add Badge" vertex="1">
+          <mxGeometry height="50" width="120" x="150" y="485" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-17" parent="vOAIPK-nI9PuliQ_U_Pk-11" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="195" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-20" edge="1" parent="vOAIPK-nI9PuliQ_U_Pk-11" source="vOAIPK-nI9PuliQ_U_Pk-12" target="vOAIPK-nI9PuliQ_U_Pk-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-28" edge="1" parent="vOAIPK-nI9PuliQ_U_Pk-11" source="vOAIPK-nI9PuliQ_U_Pk-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="vOAIPK-nI9PuliQ_U_Pk-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="70" y="690" />
+              <mxPoint x="210" y="690" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-31" edge="1" parent="vOAIPK-nI9PuliQ_U_Pk-11" source="vOAIPK-nI9PuliQ_U_Pk-16" target="vOAIPK-nI9PuliQ_U_Pk-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-19" edge="1" parent="vOAIPK-nI9PuliQ_U_Pk-1" source="vOAIPK-nI9PuliQ_U_Pk-4" target="vOAIPK-nI9PuliQ_U_Pk-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-21" edge="1" parent="vOAIPK-nI9PuliQ_U_Pk-1" source="vOAIPK-nI9PuliQ_U_Pk-13" target="vOAIPK-nI9PuliQ_U_Pk-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-22" edge="1" parent="vOAIPK-nI9PuliQ_U_Pk-1" source="vOAIPK-nI9PuliQ_U_Pk-5" target="vOAIPK-nI9PuliQ_U_Pk-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-23" edge="1" parent="vOAIPK-nI9PuliQ_U_Pk-1" source="vOAIPK-nI9PuliQ_U_Pk-14" target="vOAIPK-nI9PuliQ_U_Pk-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-27" edge="1" parent="vOAIPK-nI9PuliQ_U_Pk-1" source="vOAIPK-nI9PuliQ_U_Pk-9" target="vOAIPK-nI9PuliQ_U_Pk-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vOAIPK-nI9PuliQ_U_Pk-32" edge="1" parent="vOAIPK-nI9PuliQ_U_Pk-1" source="vOAIPK-nI9PuliQ_U_Pk-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="vOAIPK-nI9PuliQ_U_Pk-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,124 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.2.4">
+  <diagram name="Page-1" id="Mmq7xYTNcddnLP719qJs">
+    <mxGraphModel dx="1722" dy="919" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pool" parent="1" style="swimlane;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=20;horizontal=0;horizontalStack=1;html=1;fillColor=#f5f5f5;strokeColor=#666666;" value="Payment &amp; Escrow Process" vertex="1">
+          <mxGeometry height="740" width="740" x="80" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_client" parent="pool" style="swimlane;startSize=20;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Client" vertex="1">
+          <mxGeometry height="740" width="240" x="20" as="geometry" />
+        </mxCell>
+        <mxCell id="start" parent="lane_client" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="105" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="act_select_method" parent="lane_client" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" value="Select Method&#xa;(InstaPay/Wallet)" vertex="1">
+          <mxGeometry height="50" width="120" x="60" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="act_input_pin" parent="lane_client" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" value="Enter OTP/Pin" vertex="1">
+          <mxGeometry height="40" width="120" x="60" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_system" parent="pool" style="swimlane;startSize=20;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="System (Sho8la)" vertex="1">
+          <mxGeometry height="740" width="240" x="260" as="geometry" />
+        </mxCell>
+        <mxCell id="act_load_page" parent="lane_system" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;" value="Display Payment&#xa;Options" vertex="1">
+          <mxGeometry height="40" width="120" x="60" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="act_init_trans" parent="lane_system" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;" value="Initialize Transaction&#xa;with Paymob API" vertex="1">
+          <mxGeometry height="50" width="120" x="60" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="act_show_err" parent="lane_system" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;" value="Show Payment Failed" vertex="1">
+          <mxGeometry height="40" width="120" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="act_update_escrow" parent="lane_system" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontStyle=1" value="Mark Funds as&#xa;&quot;Held in Escrow&quot;" vertex="1">
+          <mxGeometry height="50" width="100" x="130" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="act_update_job" parent="lane_system" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;" value="Set Job Status:&#xa;&quot;In Progress&quot;" vertex="1">
+          <mxGeometry height="50" width="100" x="130" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="act_notify" parent="lane_system" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;" value="Notify Freelancer" vertex="1">
+          <mxGeometry height="40" width="100" x="130" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="end" parent="lane_system" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="40" y="685" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_paymob" parent="pool" style="swimlane;startSize=20;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Paymob (External)" vertex="1">
+          <mxGeometry height="740" width="240" x="500" as="geometry" />
+        </mxCell>
+        <mxCell id="act_process_pay" parent="lane_paymob" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;" value="Process Payment&#xa;(Request OTP/Pin)" vertex="1">
+          <mxGeometry height="50" width="120" x="60" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="dec_status" parent="lane_paymob" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;" value="Success?" vertex="1">
+          <mxGeometry height="80" width="80" x="80" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="act_return_fail" parent="lane_paymob" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;" value="Return Error Code" vertex="1">
+          <mxGeometry height="40" width="110" x="10" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="act_return_ok" parent="lane_paymob" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;" value="Return Success" vertex="1">
+          <mxGeometry height="40" width="100" x="130" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="pool" source="start" target="act_load_page">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="pool" source="act_load_page" target="act_select_method">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="pool" source="act_select_method" target="act_init_trans">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="pool" source="act_init_trans" target="act_process_pay">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="pool" source="act_process_pay" target="act_input_pin">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="pool" source="act_input_pin" target="dec_status">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="120" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_no" edge="1" parent="pool" source="dec_status" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="act_return_fail" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="pool" source="act_return_fail" target="act_show_err">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_retry" edge="1" parent="pool" source="act_show_err" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="act_select_method">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="20" y="620" />
+              <mxPoint x="20" y="175" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_yes" edge="1" parent="pool" source="dec_status" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="act_return_ok" value="Yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="pool" source="act_return_ok" style="entryX=1;entryY=0.6;entryDx=0;entryDy=0;entryPerimeter=0;" target="act_update_escrow">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="680" y="550" />
+            </Array>
+            <mxPoint x="500" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="pool" source="act_update_escrow" target="act_update_job">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="pool" source="act_update_job" target="act_notify">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="pool" source="act_notify" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

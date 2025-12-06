@@ -1,0 +1,42 @@
+﻿# IDE & Editor folders
+.github/
+.kilocode/
+.kiro/
+.roo/
+.windsurf/
+.cursor/
+.qoder/
+.augment/
+.clinerules/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Next.js
+.next/
+out/
+dist/
+
+# Environment
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Diagrams (local files)
+*.drawio.bak
+*.drawio~

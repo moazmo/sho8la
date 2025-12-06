@@ -1,0 +1,129 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.2.4">
+  <diagram name="ForkAndFlame_Activity" id="5GaQuAowCyaRSSYbX4jd">
+    <mxGraphModel dx="3266" dy="1503" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="T2v8WgRRbvhAQR3spfvw-1" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" value="Client" vertex="1">
+          <mxGeometry height="700" width="100" x="-1020" y="-320" as="geometry" />
+        </mxCell>
+        <mxCell id="T2v8WgRRbvhAQR3spfvw-2" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#d5e8d4;strokeColor=#82b366;" value="Frontend App" vertex="1">
+          <mxGeometry height="700" width="100" x="-720" y="-320" as="geometry" />
+        </mxCell>
+        <mxCell id="T2v8WgRRbvhAQR3spfvw-3" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Backend API" vertex="1">
+          <mxGeometry height="700" width="100" x="-420" y="-320" as="geometry" />
+        </mxCell>
+        <mxCell id="T2v8WgRRbvhAQR3spfvw-6" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#f5f5f5;strokeColor=#666666;" value="Database" vertex="1">
+          <mxGeometry height="700" width="100" x="-120" y="-320" as="geometry" />
+        </mxCell>
+        <mxCell id="T2v8WgRRbvhAQR3spfvw-7" edge="1" parent="1" source="T2v8WgRRbvhAQR3spfvw-1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=12;" target="T2v8WgRRbvhAQR3spfvw-2" value="1. Click &quot;View Proposals&quot;">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <Array as="points">
+              <mxPoint x="-820" y="-240" />
+            </Array>
+            <mxPoint x="-970" y="-240" as="sourcePoint" />
+            <mxPoint x="-670" y="-240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T2v8WgRRbvhAQR3spfvw-8" edge="1" parent="1" source="T2v8WgRRbvhAQR3spfvw-2" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=12;" target="T2v8WgRRbvhAQR3spfvw-3" value="2. Request Proposals (JobID)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <Array as="points">
+              <mxPoint x="-530" y="-210" />
+            </Array>
+            <mxPoint x="-670" y="-200" as="sourcePoint" />
+            <mxPoint x="-370" y="-200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T2v8WgRRbvhAQR3spfvw-9" edge="1" parent="1" source="T2v8WgRRbvhAQR3spfvw-3" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=12;" target="T2v8WgRRbvhAQR3spfvw-6" value="3. Fetch Proposals By JobID">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <Array as="points">
+              <mxPoint x="-250" y="-170" />
+            </Array>
+            <mxPoint x="-370" y="-160" as="sourcePoint" />
+            <mxPoint x="-70" y="-160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T2v8WgRRbvhAQR3spfvw-10" edge="1" parent="1" source="T2v8WgRRbvhAQR3spfvw-6" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=12;" target="T2v8WgRRbvhAQR3spfvw-3" value="4. Return List (Student Info, Price)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-230" y="-130" />
+            </Array>
+            <mxPoint x="-70" y="-120" as="sourcePoint" />
+            <mxPoint x="-370" y="-120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T2v8WgRRbvhAQR3spfvw-11" edge="1" parent="1" source="T2v8WgRRbvhAQR3spfvw-3" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=12;" target="T2v8WgRRbvhAQR3spfvw-2" value="5. JSON Response (List)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="-510" y="-150" />
+            </Array>
+            <mxPoint x="-370" y="-80" as="sourcePoint" />
+            <mxPoint x="-670" y="-80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T2v8WgRRbvhAQR3spfvw-12" edge="1" parent="1" source="T2v8WgRRbvhAQR3spfvw-2" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=12;" target="T2v8WgRRbvhAQR3spfvw-1" value="6. Display Proposal List">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-800" y="-180" />
+            </Array>
+            <mxPoint x="-670" y="-40" as="sourcePoint" />
+            <mxPoint x="-970" y="-40" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T2v8WgRRbvhAQR3spfvw-13" edge="1" parent="1" source="T2v8WgRRbvhAQR3spfvw-1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=12;" target="T2v8WgRRbvhAQR3spfvw-2" value="7. Click &quot;Accept&quot; on Candidate">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <Array as="points">
+              <mxPoint x="-820" y="-100" />
+            </Array>
+            <mxPoint x="-970" y="20" as="sourcePoint" />
+            <mxPoint x="-670" y="20" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T2v8WgRRbvhAQR3spfvw-14" edge="1" parent="1" source="T2v8WgRRbvhAQR3spfvw-2" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=12;" target="T2v8WgRRbvhAQR3spfvw-3" value="8. Send Accept Request (PropID)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <Array as="points">
+              <mxPoint x="-550" y="-60" />
+            </Array>
+            <mxPoint x="-670" y="60" as="sourcePoint" />
+            <mxPoint x="-370" y="60" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T2v8WgRRbvhAQR3spfvw-15" edge="1" parent="1" source="T2v8WgRRbvhAQR3spfvw-3" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=12;" target="T2v8WgRRbvhAQR3spfvw-6" value="9. Update Proposal Status = Accepted">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <Array as="points">
+              <mxPoint x="-240" y="-20" />
+            </Array>
+            <mxPoint x="-370" y="100" as="sourcePoint" />
+            <mxPoint x="-70" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T2v8WgRRbvhAQR3spfvw-16" edge="1" parent="1" source="T2v8WgRRbvhAQR3spfvw-6" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=12;" target="T2v8WgRRbvhAQR3spfvw-3" value="10. Update Success">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="-70" y="140" as="sourcePoint" />
+            <mxPoint x="-370" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T2v8WgRRbvhAQR3spfvw-17" edge="1" parent="1" source="T2v8WgRRbvhAQR3spfvw-3" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=12;" target="T2v8WgRRbvhAQR3spfvw-2" value="11. 200 OK">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-500" y="10" />
+            </Array>
+            <mxPoint x="-370" y="180" as="sourcePoint" />
+            <mxPoint x="-670" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T2v8WgRRbvhAQR3spfvw-18" edge="1" parent="1" source="T2v8WgRRbvhAQR3spfvw-2" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=12;" target="T2v8WgRRbvhAQR3spfvw-1" value="12. Redirect to Payment Page">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-810" y="-20" />
+            </Array>
+            <mxPoint x="-670" y="220" as="sourcePoint" />
+            <mxPoint x="-970" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

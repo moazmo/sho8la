@@ -1,0 +1,146 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.2.4">
+  <diagram name="Sequence Submit Proposal Wide" id="fkiLNVUY3Dl_4ipnWCJ9">
+    <mxGraphModel dx="1666" dy="1103" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pmt-6_CBIqNa703I-_XN-1" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" value="Freelancer" vertex="1">
+          <mxGeometry height="700" width="100" x="570" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="pmt-6_CBIqNa703I-_XN-2" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Frontend App" vertex="1">
+          <mxGeometry height="700" width="100" x="870" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="pmt-6_CBIqNa703I-_XN-3" parent="pmt-6_CBIqNa703I-_XN-2" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="" vertex="1">
+          <mxGeometry height="30" width="10" x="45" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="pmt-6_CBIqNa703I-_XN-4" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Backend API" vertex="1">
+          <mxGeometry height="700" width="100" x="1170" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="pmt-6_CBIqNa703I-_XN-5" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#f5f5f5;strokeColor=#666666;" value="Database" vertex="1">
+          <mxGeometry height="700" width="100" x="1470" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="pmt-6_CBIqNa703I-_XN-6" edge="1" parent="1" source="pmt-6_CBIqNa703I-_XN-1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=12;" target="pmt-6_CBIqNa703I-_XN-2" value="1. Click &quot;Apply Now&quot;">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <Array as="points">
+              <mxPoint x="770" y="340" />
+            </Array>
+            <mxPoint x="620" y="340" as="sourcePoint" />
+            <mxPoint x="920" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pmt-6_CBIqNa703I-_XN-7" edge="1" parent="1" source="pmt-6_CBIqNa703I-_XN-1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=12;" target="pmt-6_CBIqNa703I-_XN-2" value="2. Fill Details &amp; Submit">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <Array as="points">
+              <mxPoint x="770" y="380" />
+            </Array>
+            <mxPoint x="620" y="380" as="sourcePoint" />
+            <mxPoint x="920" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pmt-6_CBIqNa703I-_XN-8" edge="1" parent="1" source="pmt-6_CBIqNa703I-_XN-2" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=12;entryX=1;entryY=0;entryDx=0;entryDy=0;" target="pmt-6_CBIqNa703I-_XN-3" value="3. Validate Input (Price &gt; 0)">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <Array as="points">
+              <mxPoint x="950" y="410" />
+              <mxPoint x="950" y="440" />
+            </Array>
+            <mxPoint x="920" y="410" as="sourcePoint" />
+            <mxPoint x="930" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pmt-6_CBIqNa703I-_XN-9" edge="1" parent="1" source="pmt-6_CBIqNa703I-_XN-2" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=12;" target="pmt-6_CBIqNa703I-_XN-4" value="4. Send Proposal Data">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <Array as="points">
+              <mxPoint x="1070" y="540" />
+            </Array>
+            <mxPoint x="920" y="480" as="sourcePoint" />
+            <mxPoint x="1220" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pmt-6_CBIqNa703I-_XN-10" edge="1" parent="1" source="pmt-6_CBIqNa703I-_XN-4" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=12;" target="pmt-6_CBIqNa703I-_XN-5" value="5. Check if Proposal Exists">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <Array as="points">
+              <mxPoint x="1360" y="490" />
+            </Array>
+            <mxPoint x="1220" y="520" as="sourcePoint" />
+            <mxPoint x="1520" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pmt-6_CBIqNa703I-_XN-11" edge="1" parent="1" source="pmt-6_CBIqNa703I-_XN-5" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=12;" target="pmt-6_CBIqNa703I-_XN-4" value="6. Return Count (0 or 1)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1320" y="430" />
+            </Array>
+            <mxPoint x="1520" y="560" as="sourcePoint" />
+            <mxPoint x="1220" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pmt-6_CBIqNa703I-_XN-12" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=40;height=15;" value="alt" vertex="1">
+          <mxGeometry height="300" width="1080" x="540" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="pmt-6_CBIqNa703I-_XN-13" parent="pmt-6_CBIqNa703I-_XN-12" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" value="[Duplicate]" vertex="1">
+          <mxGeometry height="20" width="70" x="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pmt-6_CBIqNa703I-_XN-14" parent="pmt-6_CBIqNa703I-_XN-12" style="shape=line;html=1;strokeWidth=1;dashed=1;" value="" vertex="1">
+          <mxGeometry height="10" width="1080" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="pmt-6_CBIqNa703I-_XN-15" parent="pmt-6_CBIqNa703I-_XN-12" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" value="[New]" vertex="1">
+          <mxGeometry height="20" width="60" x="40" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="pmt-6_CBIqNa703I-_XN-16" edge="1" parent="1" source="pmt-6_CBIqNa703I-_XN-4" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=12;" target="pmt-6_CBIqNa703I-_XN-2" value="7. Error: Already Applied">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1070" y="700" />
+            </Array>
+            <mxPoint x="1220" y="640" as="sourcePoint" />
+            <mxPoint x="920" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pmt-6_CBIqNa703I-_XN-17" edge="1" parent="1" source="pmt-6_CBIqNa703I-_XN-2" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=12;" target="pmt-6_CBIqNa703I-_XN-1" value="8. Show Duplicate Warning">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="770" y="650" />
+            </Array>
+            <mxPoint x="920" y="680" as="sourcePoint" />
+            <mxPoint x="620" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pmt-6_CBIqNa703I-_XN-18" edge="1" parent="1" source="pmt-6_CBIqNa703I-_XN-4" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=12;" target="pmt-6_CBIqNa703I-_XN-5" value="9. INSERT New Proposal">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <Array as="points">
+              <mxPoint x="1360" y="750" />
+            </Array>
+            <mxPoint x="1220" y="740" as="sourcePoint" />
+            <mxPoint x="1520" y="740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pmt-6_CBIqNa703I-_XN-19" edge="1" parent="1" source="pmt-6_CBIqNa703I-_XN-5" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=12;" target="pmt-6_CBIqNa703I-_XN-4" value="10. Save Confirmed">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1330" y="560" />
+            </Array>
+            <mxPoint x="1520" y="780" as="sourcePoint" />
+            <mxPoint x="1220" y="780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pmt-6_CBIqNa703I-_XN-20" edge="1" parent="1" source="pmt-6_CBIqNa703I-_XN-4" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=12;" target="pmt-6_CBIqNa703I-_XN-2" value="11. Success Response">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <Array as="points">
+              <mxPoint x="1040" y="570" />
+            </Array>
+            <mxPoint x="1220" y="820" as="sourcePoint" />
+            <mxPoint x="920" y="820" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pmt-6_CBIqNa703I-_XN-21" edge="1" parent="1" source="pmt-6_CBIqNa703I-_XN-2" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=12;" target="pmt-6_CBIqNa703I-_XN-1" value="12. Display &quot;Proposal Submitted&quot;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="750" y="550" />
+            </Array>
+            <mxPoint x="920" y="860" as="sourcePoint" />
+            <mxPoint x="620" y="860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

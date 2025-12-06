@@ -1,0 +1,113 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.2.3">
+  <diagram name="Sho8la DFD Level 1" id="fMO4lzWhkZavyc5Zl_t8">
+    <mxGraphModel dx="1425" dy="761" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" value="Client" vertex="1">
+          <mxGeometry height="60" width="120" x="490" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" value="Freelancer&#xa;(Student)" vertex="1">
+          <mxGeometry height="60" width="120" x="1130" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" value="Admin" vertex="1">
+          <mxGeometry height="60" width="120" x="810" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" value="Paymob&#xa;(External Gateway)" vertex="1">
+          <mxGeometry height="60" width="120" x="490" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-5" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;" value="1.0&#xa;Manage Auth &amp;&#xa;Profiles" vertex="1">
+          <mxGeometry height="100" width="100" x="820" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-6" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;" value="2.0&#xa;Manage Jobs" vertex="1">
+          <mxGeometry height="100" width="100" x="690" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-7" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;" value="3.0&#xa;Manage&#xa;Proposals" vertex="1">
+          <mxGeometry height="100" width="100" x="950" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-8" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;" value="4.0&#xa;Process&#xa;Payments" vertex="1">
+          <mxGeometry height="100" width="100" x="820" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-9" parent="1" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=2" value="D1 Users" vertex="1">
+          <mxGeometry height="60" width="100" x="1020" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-10" parent="1" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=2" value="D2 Jobs" vertex="1">
+          <mxGeometry height="60" width="100" x="690" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-11" parent="1" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=2" value="D3 Proposals" vertex="1">
+          <mxGeometry height="60" width="100" x="1020" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-12" parent="1" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=2" value="D4 Transactions" vertex="1">
+          <mxGeometry height="60" width="100" x="1030" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-13" edge="1" parent="1" source="HVZ6qm2-VJ_pJ5mzzFYU-1" style="endArrow=classic;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="HVZ6qm2-VJ_pJ5mzzFYU-5" value="Register/Login">
+          <mxGeometry height="50" relative="1" width="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-14" edge="1" parent="1" source="HVZ6qm2-VJ_pJ5mzzFYU-2" style="endArrow=classic;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" target="HVZ6qm2-VJ_pJ5mzzFYU-5" value="Register + ID">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1190" y="330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-15" edge="1" parent="1" source="HVZ6qm2-VJ_pJ5mzzFYU-3" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="HVZ6qm2-VJ_pJ5mzzFYU-5" value="Verify ID">
+          <mxGeometry height="50" relative="1" width="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-16" edge="1" parent="1" source="HVZ6qm2-VJ_pJ5mzzFYU-5" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="HVZ6qm2-VJ_pJ5mzzFYU-9" value="User Data">
+          <mxGeometry height="50" relative="1" width="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-17" edge="1" parent="1" source="HVZ6qm2-VJ_pJ5mzzFYU-1" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="HVZ6qm2-VJ_pJ5mzzFYU-6" value="Post Job">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-18" edge="1" parent="1" source="HVZ6qm2-VJ_pJ5mzzFYU-6" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="HVZ6qm2-VJ_pJ5mzzFYU-10" value="Job Info">
+          <mxGeometry height="50" relative="1" width="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-19" edge="1" parent="1" source="HVZ6qm2-VJ_pJ5mzzFYU-2" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="HVZ6qm2-VJ_pJ5mzzFYU-6" value="Browse Jobs">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="950" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-20" edge="1" parent="1" source="HVZ6qm2-VJ_pJ5mzzFYU-2" style="endArrow=classic;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" target="HVZ6qm2-VJ_pJ5mzzFYU-7" value="Submit Proposal">
+          <mxGeometry height="50" relative="1" width="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-21" edge="1" parent="1" source="HVZ6qm2-VJ_pJ5mzzFYU-7" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="HVZ6qm2-VJ_pJ5mzzFYU-11" value="Store Proposal">
+          <mxGeometry height="50" relative="1" width="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-22" edge="1" parent="1" source="HVZ6qm2-VJ_pJ5mzzFYU-1" style="endArrow=classic;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="HVZ6qm2-VJ_pJ5mzzFYU-7" value="Accept">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="810" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-23" edge="1" parent="1" source="HVZ6qm2-VJ_pJ5mzzFYU-7" style="endArrow=classic;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" target="HVZ6qm2-VJ_pJ5mzzFYU-8" value="Trigger Payment">
+          <mxGeometry height="50" relative="1" width="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-24" edge="1" parent="1" source="HVZ6qm2-VJ_pJ5mzzFYU-8" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="HVZ6qm2-VJ_pJ5mzzFYU-4" value="Process Deposit">
+          <mxGeometry height="50" relative="1" width="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-25" edge="1" parent="1" source="HVZ6qm2-VJ_pJ5mzzFYU-4" style="endArrow=classic;html=1;dashed=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" target="HVZ6qm2-VJ_pJ5mzzFYU-8" value="Confirm">
+          <mxGeometry height="50" relative="1" width="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-26" edge="1" parent="1" source="HVZ6qm2-VJ_pJ5mzzFYU-8" style="endArrow=classic;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="HVZ6qm2-VJ_pJ5mzzFYU-12" value="Update Balance">
+          <mxGeometry height="50" relative="1" width="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HVZ6qm2-VJ_pJ5mzzFYU-27" edge="1" parent="1" source="HVZ6qm2-VJ_pJ5mzzFYU-2" style="endArrow=classic;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="HVZ6qm2-VJ_pJ5mzzFYU-8" value="Withdraw">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1160" y="800" />
+            </Array>
+            <mxPoint x="1160" y="520" as="sourcePoint" />
+            <mxPoint x="930" y="790" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

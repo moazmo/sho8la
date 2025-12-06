@@ -1,0 +1,158 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.2.4">
+  <diagram name="ForkAndFlame_Activity" id="5GaQuAowCyaRSSYbX4jd">
+    <mxGraphModel dx="2922" dy="1319" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ByES2n8k4B0wm4zcSBCn-1" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" value="Freelancer" vertex="1">
+          <mxGeometry height="700" width="100" x="-990" y="-380" as="geometry" />
+        </mxCell>
+        <mxCell id="ByES2n8k4B0wm4zcSBCn-2" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Frontend App" vertex="1">
+          <mxGeometry height="700" width="100" x="-690" y="-380" as="geometry" />
+        </mxCell>
+        <mxCell id="ByES2n8k4B0wm4zcSBCn-3" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Backend API" vertex="1">
+          <mxGeometry height="700" width="100" x="-390" y="-380" as="geometry" />
+        </mxCell>
+        <mxCell id="ByES2n8k4B0wm4zcSBCn-4" parent="ByES2n8k4B0wm4zcSBCn-3" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#e1d5e7;strokeColor=#9673a6;" value="" vertex="1">
+          <mxGeometry height="30" width="10" x="45" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="ByES2n8k4B0wm4zcSBCn-17" edge="1" parent="ByES2n8k4B0wm4zcSBCn-3" source="ByES2n8k4B0wm4zcSBCn-3" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=12;entryX=1;entryY=0;entryDx=0;entryDy=0;" target="ByES2n8k4B0wm4zcSBCn-4" value="8. Check (Request &gt; Balance)">
+          <mxGeometry relative="1" width="80" x="0.3506" y="-7" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="70" y="190" />
+              <mxPoint x="200" y="210" />
+              <mxPoint x="130" y="245" />
+            </Array>
+            <mxPoint x="50" y="390" as="sourcePoint" />
+            <mxPoint x="60" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ByES2n8k4B0wm4zcSBCn-5" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#f5f5f5;strokeColor=#666666;" value="Database" vertex="1">
+          <mxGeometry height="700" width="100" x="-90" y="-380" as="geometry" />
+        </mxCell>
+        <mxCell id="ByES2n8k4B0wm4zcSBCn-6" edge="1" parent="1" source="ByES2n8k4B0wm4zcSBCn-1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=12;" target="ByES2n8k4B0wm4zcSBCn-2" value="1. Open Wallet Page">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <Array as="points">
+              <mxPoint x="-790" y="-300" />
+            </Array>
+            <mxPoint x="-940" y="-300" as="sourcePoint" />
+            <mxPoint x="-640" y="-300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ByES2n8k4B0wm4zcSBCn-7" edge="1" parent="1" source="ByES2n8k4B0wm4zcSBCn-2" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=12;" target="ByES2n8k4B0wm4zcSBCn-3" value="2. Get Wallet Balance">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <Array as="points">
+              <mxPoint x="-510" y="-280" />
+            </Array>
+            <mxPoint x="-640" y="-260" as="sourcePoint" />
+            <mxPoint x="-340" y="-260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ByES2n8k4B0wm4zcSBCn-8" edge="1" parent="1" source="ByES2n8k4B0wm4zcSBCn-3" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=12;" target="ByES2n8k4B0wm4zcSBCn-5" value="3. SELECT Balance FROM Users">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <Array as="points">
+              <mxPoint x="-200" y="-260" />
+            </Array>
+            <mxPoint x="-340" y="-220" as="sourcePoint" />
+            <mxPoint x="-40" y="-220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ByES2n8k4B0wm4zcSBCn-9" edge="1" parent="1" source="ByES2n8k4B0wm4zcSBCn-5" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=12;" target="ByES2n8k4B0wm4zcSBCn-3" value="4. Return Balance (e.g. 5000 EGP)">
+          <mxGeometry relative="1" x="0.0006" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="-210" y="-230" />
+            </Array>
+            <mxPoint x="-40" y="-180" as="sourcePoint" />
+            <mxPoint x="-340" y="-180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ByES2n8k4B0wm4zcSBCn-10" edge="1" parent="1" source="ByES2n8k4B0wm4zcSBCn-3" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=12;" target="ByES2n8k4B0wm4zcSBCn-2" value="5. Display Balance">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-500" y="-240" />
+            </Array>
+            <mxPoint x="-340" y="-140" as="sourcePoint" />
+            <mxPoint x="-640" y="-140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ByES2n8k4B0wm4zcSBCn-11" edge="1" parent="1" source="ByES2n8k4B0wm4zcSBCn-1" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=12;" target="ByES2n8k4B0wm4zcSBCn-2" value="6. Enter Amount &amp; Confirm">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <Array as="points">
+              <mxPoint x="-800" y="-260" />
+            </Array>
+            <mxPoint x="-940" y="-90" as="sourcePoint" />
+            <mxPoint x="-640" y="-90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ByES2n8k4B0wm4zcSBCn-12" edge="1" parent="1" source="ByES2n8k4B0wm4zcSBCn-2" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=12;" target="ByES2n8k4B0wm4zcSBCn-3" value="7. Send Withdrawal Request">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <Array as="points">
+              <mxPoint x="-500" y="-210" />
+            </Array>
+            <mxPoint x="-640" y="-50" as="sourcePoint" />
+            <mxPoint x="-340" y="-50" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ByES2n8k4B0wm4zcSBCn-13" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=40;height=15;" value="alt" vertex="1">
+          <mxGeometry height="260" width="1080" x="-1020" y="-20" as="geometry" />
+        </mxCell>
+        <mxCell id="ByES2n8k4B0wm4zcSBCn-14" parent="ByES2n8k4B0wm4zcSBCn-13" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" value="[Insufficient]" vertex="1">
+          <mxGeometry height="20" width="90" x="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ByES2n8k4B0wm4zcSBCn-15" parent="ByES2n8k4B0wm4zcSBCn-13" style="shape=line;html=1;strokeWidth=1;dashed=1;" value="" vertex="1">
+          <mxGeometry height="10" width="1080" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ByES2n8k4B0wm4zcSBCn-16" parent="ByES2n8k4B0wm4zcSBCn-13" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" value="[Sufficient]" vertex="1">
+          <mxGeometry height="20" width="80" x="40" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="ByES2n8k4B0wm4zcSBCn-18" edge="1" parent="1" source="ByES2n8k4B0wm4zcSBCn-3" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=12;" target="ByES2n8k4B0wm4zcSBCn-2" value="9. Error: Insufficient Funds">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-510" y="100" />
+            </Array>
+            <mxPoint x="-340" y="70" as="sourcePoint" />
+            <mxPoint x="-640" y="70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ByES2n8k4B0wm4zcSBCn-19" edge="1" parent="1" source="ByES2n8k4B0wm4zcSBCn-2" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=12;" target="ByES2n8k4B0wm4zcSBCn-1" value="10. Show Error Message">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-800" y="80" />
+            </Array>
+            <mxPoint x="-640" y="100" as="sourcePoint" />
+            <mxPoint x="-940" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ByES2n8k4B0wm4zcSBCn-20" edge="1" parent="1" source="ByES2n8k4B0wm4zcSBCn-3" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=12;" target="ByES2n8k4B0wm4zcSBCn-5" value="11. INSERT Transaction&amp;nbsp;">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <Array as="points">
+              <mxPoint x="-190" y="-50" />
+            </Array>
+            <mxPoint x="-340" y="150" as="sourcePoint" />
+            <mxPoint x="-40" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ByES2n8k4B0wm4zcSBCn-21" edge="1" parent="1" source="ByES2n8k4B0wm4zcSBCn-3" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=12;" target="ByES2n8k4B0wm4zcSBCn-2" value="12. Success Response">
+          <mxGeometry relative="1" width="80" as="geometry">
+            <Array as="points">
+              <mxPoint x="-440" y="170" />
+            </Array>
+            <mxPoint x="-340" y="190" as="sourcePoint" />
+            <mxPoint x="-640" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ByES2n8k4B0wm4zcSBCn-22" edge="1" parent="1" source="ByES2n8k4B0wm4zcSBCn-2" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=12;" target="ByES2n8k4B0wm4zcSBCn-1" value="13. Show &quot;Request Submitted&quot;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-800" y="180" />
+            </Array>
+            <mxPoint x="-640" y="220" as="sourcePoint" />
+            <mxPoint x="-940" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
