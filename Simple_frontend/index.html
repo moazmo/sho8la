@@ -11,17 +11,18 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-wrapper">
-                <div class="logo">Sho8la.</div>
+                <div class="logo" onclick="navigate('home')">Sho8la.</div>
                 <ul class="nav-links">
-                    <li><a href="#home">Find Work</a></li>
-                    <li><a href="#features">Hire Talent</a></li>
-                    <li><a href="#pages">Messages</a></li>
-                    <li><a href="#pages">Proposals</a></li>
-                    <li><a href="#pages">Reviews</a></li>
+                    <li><a onclick="navigate('jobs')">Find Work</a></li>
+                    <li><a onclick="navigate('post-job')">Post Job</a></li>
+                    <li><a onclick="navigate('profile')">Profile</a></li>
+                    <li><a onclick="navigate('verify')">Verify ID</a></li>
                 </ul>
                 <div class="nav-auth">
-                    <button class="btn-text" onclick="toggleLoginModal()">Login</button>
-                    <button class="btn-primary" onclick="toggleRegisterModal()">Sign Up</button>
+                    <span id="userDisplay" class="user-display" style="display:none;"></span>
+                    <button class="btn-text" onclick="toggleLoginModal()" id="loginBtn">Login</button>
+                    <button class="btn-primary" onclick="toggleRegisterModal()" id="signupBtn">Sign Up</button>
+                    <button class="btn-text" onclick="logout()" id="logoutBtn" style="display:none;">Logout</button>
                 </div>
                 <div class="hamburger" onclick="toggleMenu()">
                     <span></span>
@@ -32,189 +33,208 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="badge">🎓 #1 Freelance Platform for Egyptian Students</div>
-                <h1>Hire Top <span>Student Talent</span> in Egypt Securely.</h1>
-                <p>Connect with verified CS students from Cairo University, Ain Shams, and more. Pay locally via InstaPay and Vodafone Cash.</p>
-                <div class="hero-buttons">
-                    <button class="btn-primary" onclick="location.href='#pages'">Post a Job for Free</button>
-                    <button class="btn-secondary">I Want to Work</button>
+    <!-- Pages Container -->
+    <div id="app">
+        <!-- HOME PAGE -->
+        <div id="home-page" class="page active">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="badge">🎓 #1 Freelance Platform for Egyptian Students</div>
+                        <h1>Hire Top <span>Student Talent</span> in Egypt Securely.</h1>
+                        <p>Connect with verified CS students from Cairo University, Ain Shams, and more. Pay locally via InstaPay and Vodafone Cash.</p>
+                        <div class="hero-buttons">
+                            <button class="btn-primary" onclick="navigate('post-job')">Post a Job for Free</button>
+                            <button class="btn-secondary" onclick="navigate('jobs')">I Want to Work</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
+
+            <!-- Universities Section -->
+            <section class="universities">
+                <div class="container">
+                    <p class="universities-label">TRUSTED BY STUDENTS FROM</p>
+                    <div class="universities-grid">
+                        <div class="uni-item">Cairo University</div>
+                        <div class="uni-item">Ain Shams</div>
+                        <div class="uni-item">AUC</div>
+                        <div class="uni-item">GUC</div>
+                        <div class="uni-item">FCAI</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features">
+                <div class="container">
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">🛡️</div>
+                            <h3>Escrow Protection</h3>
+                            <p>We hold the money until the work is done. Clients feel safe paying, and students know the money exists.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">💳</div>
+                            <h3>Local Payments</h3>
+                            <p>Forget PayPal issues. Pay and get paid using the methods you actually use: InstaPay, Fawry and Wallets.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">✓</div>
+                            <h3>Verified Students</h3>
+                            <p>We check university IDs. Hire ambitious juniors who are eager to build their portfolio for fair rates.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works -->
+            <section class="how-it-works">
+                <div class="container">
+                    <h2>How It Works</h2>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <h3>Sign Up</h3>
+                            <p>Create an account as student or client in minutes.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <h3>Verify</h3>
+                            <p>Verify your university ID to get trust badge.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <h3>Browse or Post</h3>
+                            <p>Find jobs or post projects you need done.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <h3>Collaborate</h3>
+                            <p>Chat, negotiate, and complete the work.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">5</div>
+                            <h3>Pay Securely</h3>
+                            <p>Release payment through secure escrow.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">6</div>
+                            <h3>Review</h3>
+                            <p>Leave reviews and build your reputation.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
 
-    <!-- Universities Section -->
-    <section class="universities">
-        <div class="container">
-            <p class="universities-label">TRUSTED BY STUDENTS FROM</p>
-            <div class="universities-grid">
-                <div class="uni-item">Cairo University</div>
-                <div class="uni-item">Ain Shams</div>
-                <div class="uni-item">AUC</div>
-                <div class="uni-item">GUC</div>
-                <div class="uni-item">FCAI</div>
-            </div>
+        <!-- JOBS PAGE -->
+        <div id="jobs-page" class="page">
+            <section class="page-section">
+                <div class="container">
+                    <h1>Browse Jobs</h1>
+                    <div class="search-filter">
+                        <input type="text" id="jobSearch" placeholder="Search jobs..." onkeyup="filterJobs()">
+                        <select id="jobFilter" onchange="filterJobs()">
+                            <option value="">All Categories</option>
+                            <option value="web">Web Development</option>
+                            <option value="design">Design</option>
+                            <option value="data">Data Science</option>
+                            <option value="writing">Writing</option>
+                        </select>
+                    </div>
+                    <div class="jobs-grid" id="jobsList"></div>
+                </div>
+            </section>
         </div>
-    </section>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3>Escrow Protection</h3>
-                    <p>We hold the money until the work is done. Clients feel safe paying, and students know the money exists.</p>
+        <!-- POST JOB PAGE -->
+        <div id="post-job-page" class="page">
+            <section class="page-section">
+                <div class="container">
+                    <h1>Post a New Job</h1>
+                    <div class="form-container">
+                        <form onsubmit="postJob(event)">
+                            <div class="form-group">
+                                <label>Job Title *</label>
+                                <input type="text" required placeholder="e.g., Build Website, Design Logo">
+                            </div>
+                            <div class="form-group">
+                                <label>Description *</label>
+                                <textarea required placeholder="Describe what you need..." rows="5"></textarea>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Category *</label>
+                                    <select required>
+                                        <option value="">Select category</option>
+                                        <option value="web">Web Development</option>
+                                        <option value="design">Design</option>
+                                        <option value="data">Data Science</option>
+                                        <option value="writing">Writing</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Budget (EGP) *</label>
+                                    <input type="number" required placeholder="e.g., 1000" min="100">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Skills Required</label>
+                                <input type="text" placeholder="React, Node.js, MongoDB (comma separated)">
+                            </div>
+                            <button type="submit" class="btn-primary btn-full">Post Job</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💳</div>
-                    <h3>Local Payments</h3>
-                    <p>Forget PayPal issues. Pay and get paid using the methods you actually use: InstaPay, Fawry and Wallets.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">✓</div>
-                    <h3>Verified Students</h3>
-                    <p>We check university IDs. Hire ambitious juniors who are eager to build their portfolio for fair rates.</p>
-                </div>
-            </div>
+            </section>
         </div>
-    </section>
 
-    <!-- Browse Jobs Section -->
-    <section id="pages" class="jobs-section">
-        <div class="container">
-            <h2>Recent Jobs</h2>
-            <div class="jobs-grid">
-                <div class="job-card">
-                    <h3>Build E-commerce Website</h3>
-                    <p class="job-client">Posted by Ahmed M.</p>
-                    <p class="job-desc">Need a full-stack e-commerce platform with payment integration.</p>
-                    <div class="job-tags">
-                        <span class="tag">React</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">MongoDB</span>
-                    </div>
-                    <div class="job-footer">
-                        <span class="job-budget">500 EGP - 2000 EGP</span>
-                        <button class="btn-small" onclick="toggleLoginModal()">View Details</button>
-                    </div>
+        <!-- PROFILE PAGE -->
+        <div id="profile-page" class="page">
+            <section class="page-section">
+                <div class="container">
+                    <h1>My Profile</h1>
+                    <div id="profileContent"></div>
                 </div>
-
-                <div class="job-card">
-                    <h3>Mobile App UI Design</h3>
-                    <p class="job-client">Posted by Sara K.</p>
-                    <p class="job-desc">Design user interface for a student study planning app.</p>
-                    <div class="job-tags">
-                        <span class="tag">Figma</span>
-                        <span class="tag">UI/UX</span>
-                    </div>
-                    <div class="job-footer">
-                        <span class="job-budget">300 EGP - 1000 EGP</span>
-                        <button class="btn-small" onclick="toggleLoginModal()">View Details</button>
-                    </div>
-                </div>
-
-                <div class="job-card">
-                    <h3>Data Analysis Project</h3>
-                    <p class="job-client">Posted by Dr. Hassan.</p>
-                    <p class="job-desc">Analyze dataset and create visualizations using Python.</p>
-                    <div class="job-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Data Analysis</span>
-                    </div>
-                    <div class="job-footer">
-                        <span class="job-budget">400 EGP - 1500 EGP</span>
-                        <button class="btn-small" onclick="toggleLoginModal()">View Details</button>
-                    </div>
-                </div>
-
-                <div class="job-card">
-                    <h3>Write Technical Blog Posts</h3>
-                    <p class="job-client">Posted by Tech Magazine.</p>
-                    <p class="job-desc">Write 5 in-depth blog posts about web development trends.</p>
-                    <div class="job-tags">
-                        <span class="tag">Writing</span>
-                        <span class="tag">Tech</span>
-                    </div>
-                    <div class="job-footer">
-                        <span class="job-budget">250 EGP - 750 EGP</span>
-                        <button class="btn-small" onclick="toggleLoginModal()">View Details</button>
-                    </div>
-                </div>
-
-                <div class="job-card">
-                    <h3>Database Optimization</h3>
-                    <p class="job-client">Posted by Dev Team.</p>
-                    <p class="job-desc">Optimize slow SQL queries and improve database performance.</p>
-                    <div class="job-tags">
-                        <span class="tag">SQL</span>
-                        <span class="tag">Database</span>
-                    </div>
-                    <div class="job-footer">
-                        <span class="job-budget">600 EGP - 2000 EGP</span>
-                        <button class="btn-small" onclick="toggleLoginModal()">View Details</button>
-                    </div>
-                </div>
-
-                <div class="job-card">
-                    <h3>SEO Audit & Strategy</h3>
-                    <p class="job-client">Posted by Marketing Co.</p>
-                    <p class="job-desc">Perform SEO audit and create optimization strategy for website.</p>
-                    <div class="job-tags">
-                        <span class="tag">SEO</span>
-                        <span class="tag">Marketing</span>
-                    </div>
-                    <div class="job-footer">
-                        <span class="job-budget">350 EGP - 1200 EGP</span>
-                        <button class="btn-small" onclick="toggleLoginModal()">View Details</button>
-                    </div>
-                </div>
-            </div>
+            </section>
         </div>
-    </section>
 
-    <!-- How It Works Section -->
-    <section class="how-it-works">
-        <div class="container">
-            <h2>How It Works</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Sign Up</h3>
-                    <p>Create an account as student or client in minutes.</p>
+        <!-- VERIFY ID PAGE -->
+        <div id="verify-page" class="page">
+            <section class="page-section">
+                <div class="container">
+                    <h1>University ID Verification</h1>
+                    <div class="verify-container">
+                        <div id="verificationStatus"></div>
+                        <form id="verifyForm" onsubmit="submitVerification(event)" style="display:none;">
+                            <div class="form-group">
+                                <label>University *</label>
+                                <select required>
+                                    <option value="">Select University</option>
+                                    <option value="cairo">Cairo University</option>
+                                    <option value="ain_shams">Ain Shams</option>
+                                    <option value="auc">AUC</option>
+                                    <option value="guc">GUC</option>
+                                    <option value="fcai">FCAI</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Student ID *</label>
+                                <input type="text" required placeholder="Your student ID">
+                            </div>
+                            <div class="form-group">
+                                <label>Upload ID Document *</label>
+                                <input type="file" required accept="image/*">
+                            </div>
+                            <button type="submit" class="btn-primary btn-full">Submit Verification</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Verify</h3>
-                    <p>Verify your university ID to get trust badge.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Browse or Post</h3>
-                    <p>Find jobs or post projects you need done.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Collaborate</h3>
-                    <p>Chat, negotiate, and complete the work.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">5</div>
-                    <h3>Pay Securely</h3>
-                    <p>Release payment through secure escrow.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">6</div>
-                    <h3>Review</h3>
-                    <p>Leave reviews and build your reputation.</p>
-                </div>
-            </div>
+            </section>
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -223,17 +243,15 @@
                 <div class="footer-col">
                     <h4>For Clients</h4>
                     <ul>
-                        <li><a href="#">Post a Job</a></li>
-                        <li><a href="#">How to Hire</a></li>
-                        <li><a href="#">Trust & Safety</a></li>
+                        <li><a onclick="navigate('post-job')">Post a Job</a></li>
+                        <li><a onclick="navigate('jobs')">Browse Talent</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>For Students</h4>
                     <ul>
-                        <li><a href="#">Browse Jobs</a></li>
-                        <li><a href="#">Create Profile</a></li>
-                        <li><a href="#">Verify ID</a></li>
+                        <li><a onclick="navigate('jobs')">Browse Jobs</a></li>
+                        <li><a onclick="navigate('profile')">My Profile</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -241,15 +259,6 @@
                     <ul>
                         <li><a href="#">Help & FAQ</a></li>
                         <li><a href="#">Trust & Safety</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>About</h4>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Careers</a></li>
                     </ul>
                 </div>
             </div>
@@ -275,7 +284,6 @@
                 </div>
                 <button type="submit" class="btn-primary btn-full">Login</button>
             </form>
-            <p class="modal-footer">Don't have an account? <a href="#" onclick="toggleRegisterModal(); toggleLoginModal();">Sign up</a></p>
         </div>
     </div>
 
@@ -307,7 +315,6 @@
                 </div>
                 <button type="submit" class="btn-primary btn-full">Create Account</button>
             </form>
-            <p class="modal-footer">Already have an account? <a href="#" onclick="toggleLoginModal(); toggleRegisterModal();">Login</a></p>
         </div>
     </div>
 
