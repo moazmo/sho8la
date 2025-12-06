@@ -6,6 +6,10 @@ A modern platform connecting Egyptian university students with freelance opportu
 
 Sho8la is a student-to-client freelance marketplace built for verified university students. It provides a secure, trust-based environment where students can showcase their skills and earn income.
 
+## Screenshots
+
+![Sho8la Home Page](docs/screenshots/home-page.png)
+
 ## Key Features
 
 - **University ID Verification** - Verify your student status for trust badges
