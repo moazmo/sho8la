@@ -28,6 +28,7 @@ router.post('/register', async (req, res) => {
       user: { id: user._id, email: user.email, name: user.name, role: user.role }
     });
   } catch (error) {
+    console.error('❌ Register error:', error);
     res.status(500).json({ error: error.message });
   }
 });
@@ -53,6 +54,7 @@ router.post('/login', async (req, res) => {
       user: { id: user._id, email: user.email, name: user.name, role: user.role }
     });
   } catch (error) {
+    console.error('❌ Login error:', error);
     res.status(500).json({ error: error.message });
   }
 });
