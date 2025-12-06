@@ -2,146 +2,195 @@
 
 > Connecting Egyptian university students with meaningful freelance opportunities
 
-Sho8la is more than just a marketplace. It's a community where verified students turn their skills into real income, and clients find talented young professionals they can trust. Built by students, for students.
+Sho8la is more than just a marketplace. It's a community where verified students turn their skills into real income, and clients find talented young professionals they can trust.
 
-## ✨ What Makes Sho8la Different
+## ✨ Current Features (Phase 1 Complete ✅)
 
-- **For Students**: Earn money while studying, build your portfolio, and grow your professional network
-- **For Clients**: Access verified student talent you can trust with your projects
-- **Community-First**: Real university verification, transparent ratings, and dispute resolution
+### Authentication & Security
+- 🔐 User registration and login with JWT
+- 🔒 Password hashing with bcrypt
+- 👤 Role-based access control (Student/Client/Freelancer)
+- 🎯 Protected routes and authorization
 
-## 📸 Screenshots
+### User Management
+- 📝 Complete user profiles with edit capability
+- ⭐ Hourly rates and skills showcase
+- 🎓 University verification setup
+- 📊 User dashboard by role
 
-![Sho8la Home Page](docs/screenshots/home-page.png)
+### Wallet & Financial System
+- 💰 Wallet management with balance tracking
+- 🏦 Withdrawal request system
+- 📱 Multiple withdrawal methods (Bank transfer, Mobile wallet)
+- 📋 Transaction history
+- 💳 Add funds functionality
 
-## 🎯 Features
-
-- 🎓 **University Verified** - Prove you're a real student with your university ID
-- 💼 **Browse & Apply** - Find freelance projects that match your skills
-- 💰 **Safe Payments** - Escrow system protects both students and clients
-- ⭐ **Build Your Reputation** - Ratings and reviews help you grow
-- 👥 **Direct Chat** - Communicate directly with project owners
-- 🔒 **Trust & Safety** - Community standards and dispute resolution
+### User Experience
+- 🎨 Modern, responsive UI with Tailwind CSS
+- ⚡ Fast Next.js frontend with server components
+- 🔔 Real-time loading states
+- 📱 Mobile-optimized design
 
 ## 🛠️ Tech Stack
 
-**Frontend**: Next.js 14 • TypeScript • React • Tailwind CSS  
-**Icons**: Lucide React  
-**Architecture**: Component-based with custom hooks and utilities  
-**Lightweight Alternative**: Vanilla HTML/CSS/JavaScript (Simple_frontend)
+**Frontend**: Next.js 14 • TypeScript • React • Tailwind CSS • Lucide Icons  
+**Backend**: Express.js • Node.js • REST API  
+**Database**: MongoDB Atlas (Cloud)  
+**Authentication**: JWT + bcrypt  
+**State Management**: React Context + localStorage
 
 ## 📁 Project Structure
 
 ```
 Sho8la_Project/
-├── FrontEnd/sho8la/              # Production Next.js frontend
+├── backend/                          # Express.js server
 │   ├── src/
-│   │   ├── app/                  # Pages & layouts
-│   │   ├── components/           # React components
-│   │   ├── contexts/             # Auth context
-│   │   └── lib/                  # Utilities
+│   │   ├── config/                  # DB & JWT config
+│   │   ├── models/                  # MongoDB schemas
+│   │   ├── routes/                  # API endpoints
+│   │   ├── middleware/              # Auth middleware
+│   │   └── server.js                # Entry point
+│   └── .env                         # MongoDB Atlas URI
+│
+├── FrontEnd/sho8la/                 # Next.js frontend
+│   ├── src/
+│   │   ├── app/                     # Pages & routing
+│   │   ├── components/              # Reusable components
+│   │   ├── contexts/                # AuthContext
+│   │   ├── lib/                     # API client & utilities
+│   │   └── hooks/                   # Custom React hooks
 │   └── package.json
-├── Simple_frontend/              # Lightweight HTML/CSS/JS version
-│   ├── index.html                # 9-page SPA
-│   ├── styles.css                # Responsive styling
-│   └── script.js                 # Full functionality
-├── UML_Diagrams/
-│   ├── Activity_Diagrams/        # Process flows
-│   ├── Sequence_Diagrams/        # Interaction flows
-│   ├── Class_Diagram/            # System architecture
-│   ├── DFD_0/ & DFD_1/          # Data flows
-│   └── Use_case_Diagram/         # User scenarios
-└── README.md                     # This file
+│
+├── UML_Diagrams/                    # System design documentation
+└── README.md
 ```
 
-## 🚀 Getting Started
+## 🚀 Quick Start
 
-### Try It Now (No Installation)
-Want to see Sho8la in action instantly? Open `Simple_frontend/index.html` in your browser - no setup required!
-
-### Production Frontend
-
-**Prerequisites**
+### Prerequisites
 - Node.js 18+
+- MongoDB Atlas account (free tier available)
 - npm or yarn
 
-**Installation & Development**
+### Backend Setup
+```bash
+cd backend
+npm install
+cp .env.example .env
+# Update .env with your MongoDB URI
+npm run dev
+```
+Backend runs on: `http://localhost:5000`
+
+### Frontend Setup
 ```bash
 cd FrontEnd/sho8la
 npm install
 npm run dev
 ```
-Then visit [http://localhost:3000](http://localhost:3000)
+Frontend runs on: `http://localhost:3000`
 
-**Build for Production**
+### Test the Platform
+1. Register as a Freelancer or Client
+2. Explore the dashboard
+3. Try wallet features
+4. Test withdrawal requests
+
+## 📋 API Endpoints
+
+### Authentication
+- `POST /api/auth/register` - Register new user
+- `POST /api/auth/login` - User login
+
+### Users
+- `GET /api/users/:id` - Get user profile
+- `PUT /api/users/:id` - Update user profile
+- `GET /api/users/me` - Get current user
+
+### Wallets
+- `GET /api/wallets/:userId` - Get wallet balance
+- `POST /api/wallets/add-funds` - Add funds to wallet
+
+### Withdrawals
+- `GET /api/withdrawals/user/:userId` - Get withdrawal history
+- `POST /api/withdrawals/request` - Request withdrawal
+- `GET /api/withdrawals/pending` - Get pending withdrawals (admin)
+- `PUT /api/withdrawals/:id/approve` - Approve withdrawal (admin)
+
+## 🎯 What's Working
+
+✅ User registration with email validation  
+✅ Login with JWT token authentication  
+✅ Role-based dashboards  
+✅ Profile management  
+✅ Wallet system  
+✅ Withdrawal requests  
+✅ Mobile-responsive design  
+✅ Backend API fully integrated  
+
+## 🔄 Upcoming Features (Phase 2)
+
+- 💼 Job browsing and posting
+- 📝 Proposal management
+- 💬 Real-time messaging
+- ⭐ Reviews and ratings
+- 📧 Email notifications
+- 🎓 University ID verification
+- 💳 Real payment integration
+- 📊 Admin dashboard
+
+## 🐛 Known Issues & Fixes Applied
+
+All critical bugs have been fixed including:
+- ✅ Authentication error handling
+- ✅ Wallet balance calculations
+- ✅ Dashboard data loading
+- ✅ Role-based access control
+- ✅ Form validation
+
+For detailed development history, see `DEVELOPMENT_LOG.md` (local reference)
+
+## 💻 Development
+
+### Run Development Server
+```bash
+cd FrontEnd/sho8la
+npm run dev
+```
+
+### Build for Production
 ```bash
 npm run build
 npm start
 ```
 
-## 📱 Platform Pages
-
-| Page | Purpose |
-|------|---------|
-| **Home** | Landing page & job discovery |
-| **Browse Jobs** | Search & filter available projects |
-| **Post Job** | Create and publish new jobs |
-| **Profile** | Manage your profile & preferences |
-| **Verify ID** | Upload university ID verification |
-| **Applications** | Track your job applications |
-| **Wallet** | Manage funds and transactions |
-| **Messages** | Chat with clients |
-| **Help & Support** | FAQs and contact support |
-| **Trust & Safety** | Platform policies & guidelines |
-
-## 🎓 Supported Universities
-
-- Cairo University
-- Ain Shams University
-- AUC (American University in Cairo)
-- GUC (German University in Cairo)
-- FCAI (Faculty of Computers and Artificial Intelligence)
-
-## 💻 Development Scripts
-
+### Backend Development
 ```bash
-npm run dev      # Start development server with hot reload
-npm run build    # Create optimized production build
-npm start        # Run production server
-npm run lint     # Check code quality with ESLint
+cd backend
+npm run dev
 ```
 
 ## 🤝 Contributing
 
-We'd love your contributions! Whether you're fixing bugs, adding features, or improving documentation:
+Contributions are welcome! Please:
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📞 Support & Community
+## 📞 Support
 
-- Have questions? Check out [Help & Support](/help)
+- Questions? Check the documentation
 - Found a bug? [Open an issue](https://github.com/moazmo/sho8la/issues)
-- Want to chat? [Join our discussions](https://github.com/moazmo/sho8la/discussions)
+- Want to contribute? [See contributing guide](#contributing)
 
 ## 📄 License
 
-This project is open source and available under the MIT License.
+MIT License - feel free to fork and use this project
 
 ---
 
 **Made with ❤️ by students, for students**  
 Sho8la © 2025
-
-This is a student project. Feel free to fork and submit pull requests.
-
-## License
-
-MIT License
-
-## Contact
-
-For questions or support, please contact the development team.
