@@ -1,17 +1,17 @@
 // Local Storage Keys
 const STORAGE_USER = 'sho8la_user';
 const STORAGE_JOBS = 'sho8la_jobs';
-const STORAGE_PROFILES = 'sho8la_profiles';
+const STORAGE_APPLICATIONS = 'sho8la_applications';
 const STORAGE_VERIFICATION = 'sho8la_verification';
 
 // Sample Jobs Data
 const defaultJobs = [
-    { id: 1, title: 'Build E-commerce Website', client: 'Ahmed M.', desc: 'Full-stack e-commerce platform with payment integration.', category: 'web', budget: '500-2000', tags: ['React', 'Node.js', 'MongoDB'] },
-    { id: 2, title: 'Mobile App UI Design', client: 'Sara K.', desc: 'Design user interface for a student study planning app.', category: 'design', budget: '300-1000', tags: ['Figma', 'UI/UX'] },
-    { id: 3, title: 'Data Analysis Project', client: 'Dr. Hassan', desc: 'Analyze dataset and create visualizations using Python.', category: 'data', budget: '400-1500', tags: ['Python', 'Data Analysis'] },
-    { id: 4, title: 'Write Technical Blog Posts', client: 'Tech Magazine', desc: 'Write 5 in-depth blog posts about web development trends.', category: 'writing', budget: '250-750', tags: ['Writing', 'Tech'] },
-    { id: 5, title: 'Database Optimization', client: 'Dev Team', desc: 'Optimize slow SQL queries and improve database performance.', category: 'web', budget: '600-2000', tags: ['SQL', 'Database'] },
-    { id: 6, title: 'SEO Audit & Strategy', client: 'Marketing Co.', desc: 'Perform SEO audit and create optimization strategy for website.', category: 'writing', budget: '350-1200', tags: ['SEO', 'Marketing'] }
+    { id: 1, title: 'Build E-commerce Website', client: 'Ahmed M.', desc: 'Full-stack e-commerce with payment integration.', category: 'web', budget: '500-2000', tags: ['React', 'Node.js', 'MongoDB'] },
+    { id: 2, title: 'Mobile App UI Design', client: 'Sara K.', desc: 'Design UI for a student study planning app.', category: 'design', budget: '300-1000', tags: ['Figma', 'UI/UX'] },
+    { id: 3, title: 'Data Analysis Project', client: 'Dr. Hassan', desc: 'Analyze dataset and create visualizations.', category: 'data', budget: '400-1500', tags: ['Python', 'Data'] },
+    { id: 4, title: 'Write Technical Blog Posts', client: 'Tech Magazine', desc: 'Write 5 blog posts about web development.', category: 'writing', budget: '250-750', tags: ['Writing', 'Tech'] },
+    { id: 5, title: 'Database Optimization', client: 'Dev Team', desc: 'Optimize SQL queries and improve performance.', category: 'web', budget: '600-2000', tags: ['SQL', 'Database'] },
+    { id: 6, title: 'SEO Audit & Strategy', client: 'Marketing Co.', desc: 'Perform SEO audit and optimization.', category: 'writing', budget: '350-1200', tags: ['SEO', 'Marketing'] }
 ];
 
 // Initialize App
@@ -31,7 +31,10 @@ function navigate(page) {
         if (page === 'jobs') renderJobs();
         if (page === 'profile') renderProfile();
         if (page === 'verify') renderVerification();
+        if (page === 'applications') renderApplications();
+        if (page === 'messages') renderMessages();
     }
+    window.scrollTo(0, 0);
 }
 
 // Auth Functions
@@ -39,7 +42,6 @@ function handleLogin(event) {
     event.preventDefault();
     const form = event.target;
     const email = form.querySelector('input[type="email"]').value;
-    const password = form.querySelector('input[type="password"]').value;
     
     const user = {
         id: 'user_' + Date.now(),
@@ -54,7 +56,7 @@ function handleLogin(event) {
     updateAuthUI();
     toggleLoginModal();
     form.reset();
-    alert('Login successful! Welcome ' + user.name);
+    alert('Login successful!');
 }
 
 function handleRegister(event) {
@@ -63,12 +65,6 @@ function handleRegister(event) {
     const name = form.querySelector('input[type="text"]').value;
     const email = form.querySelector('input[type="email"]').value;
     const role = form.querySelector('select').value;
-    const password = form.querySelector('input[type="password"]').value;
-    
-    if (password.length < 6) {
-        alert('Password must be at least 6 characters');
-        return;
-    }
     
     const user = {
         id: 'user_' + Date.now(),
@@ -83,14 +79,13 @@ function handleRegister(event) {
     updateAuthUI();
     toggleRegisterModal();
     form.reset();
-    alert('Account created successfully! Welcome to Sho8la');
+    alert('Account created successfully!');
 }
 
 function logout() {
     localStorage.removeItem(STORAGE_USER);
     updateAuthUI();
     navigate('home');
-    alert('Logged out successfully');
 }
 
 function updateAuthUI() {
@@ -105,12 +100,11 @@ function updateAuthUI() {
         signupBtn.style.display = 'none';
         logoutBtn.style.display = 'block';
         userDisplay.textContent = user.name;
-        userDisplay.style.display = 'block';
     } else {
         loginBtn.style.display = 'block';
         signupBtn.style.display = 'block';
         logoutBtn.style.display = 'none';
-        userDisplay.style.display = 'none';
+        userDisplay.textContent = '';
     }
 }
 
@@ -121,8 +115,7 @@ function getUser() {
 
 // Jobs Functions
 function loadJobs() {
-    const stored = localStorage.getItem(STORAGE_JOBS);
-    if (!stored) {
+    if (!localStorage.getItem(STORAGE_JOBS)) {
         localStorage.setItem(STORAGE_JOBS, JSON.stringify(defaultJobs));
     }
 }
@@ -157,7 +150,7 @@ function renderJobs(filter = '') {
             </div>
             <div class="job-footer">
                 <span class="job-budget">${job.budget} EGP</span>
-                <button class="btn-small" onclick="applyJob(${job.id})">Apply Now</button>
+                <button class="btn-small" onclick="applyJob(${job.id}, '${job.title}')">Apply Now</button>
             </div>
         </div>
     `).join('');
@@ -167,15 +160,28 @@ function filterJobs() {
     renderJobs();
 }
 
-function applyJob(jobId) {
+function applyJob(jobId, jobTitle) {
     const user = getUser();
     if (!user) {
-        alert('Please login to apply for jobs');
+        alert('Please login to apply');
         toggleLoginModal();
         return;
     }
     
-    alert('Application sent! We will notify you when the client responds.');
+    const applications = JSON.parse(localStorage.getItem(STORAGE_APPLICATIONS) || '[]');
+    if (!applications.find(a => a.jobId === jobId)) {
+        applications.push({
+            jobId: jobId,
+            jobTitle: jobTitle,
+            userId: user.id,
+            status: 'pending',
+            appliedDate: new Date().toLocaleDateString()
+        });
+        localStorage.setItem(STORAGE_APPLICATIONS, JSON.stringify(applications));
+        alert('Application sent!');
+    } else {
+        alert('You have already applied to this job');
+    }
 }
 
 function postJob(event) {
@@ -189,7 +195,7 @@ function postJob(event) {
     }
     
     if (user.role !== 'client') {
-        alert('Only clients can post jobs. Switch to client role.');
+        alert('Only clients can post jobs');
         return;
     }
     
@@ -255,18 +261,14 @@ function renderProfile() {
         <div class="profile-card">
             <h3>Profile Completion</h3>
             <div style="display: grid; gap: 10px; margin-top: 15px;">
+                <div>Email: ${user.email} ✓</div>
                 <div>
-                    <strong>Email:</strong> ${user.email} ✓
+                    University Verification: 
+                    ${verification ? '✓' : '⚠️'}
                 </div>
-                <div>
-                    <strong>University Verification:</strong> 
-                    ${verification && verification.status === 'verified' ? '✓ Verified' : '⚠️ Not verified'}
-                </div>
-                <div>
-                    <button class="btn-primary" onclick="navigate('verify')" style="margin-top: 10px;">
-                        ${verification ? 'Update Verification' : 'Verify Now'}
-                    </button>
-                </div>
+                <button class="btn-primary" onclick="navigate('verify')" style="margin-top: 10px;">
+                    ${verification ? 'Update Verification' : 'Verify Now'}
+                </button>
             </div>
         </div>
     `;
@@ -289,9 +291,8 @@ function renderVerification() {
         statusDiv.innerHTML = `
             <div class="verification-status">
                 <h3>✓ Verified</h3>
-                <p>Your university ID has been verified!</p>
+                <p>University ID verified successfully!</p>
                 <p><strong>University:</strong> ${verification.university}</p>
-                <p><strong>Verified on:</strong> ${verification.verifiedAt}</p>
             </div>
         `;
         verifyForm.style.display = 'none';
@@ -323,7 +324,7 @@ function submitVerification(event) {
     form.reset();
     renderVerification();
     updateAuthUI();
-    alert('Verification submitted successfully!');
+    alert('Verification submitted!');
 }
 
 function getVerification() {
@@ -331,15 +332,48 @@ function getVerification() {
     return stored ? JSON.parse(stored) : null;
 }
 
+// Applications Functions
+function renderApplications() {
+    const user = getUser();
+    const applicationsList = document.getElementById('applicationsList');
+    
+    if (!user) {
+        applicationsList.innerHTML = '<p>Please login to view applications</p>';
+        return;
+    }
+    
+    const applications = JSON.parse(localStorage.getItem(STORAGE_APPLICATIONS) || '[]');
+    const userApps = applications.filter(a => a.userId === user.id);
+    
+    if (userApps.length === 0) {
+        applicationsList.innerHTML = '<p style="text-align: center; padding: 40px;">No applications yet. <button class="btn-primary" onclick="navigate(\'jobs\')">Browse Jobs</button></p>';
+        return;
+    }
+    
+    applicationsList.innerHTML = userApps.map(app => `
+        <div class="application-item">
+            <h3>${app.jobTitle}</h3>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="application-status">${app.status.toUpperCase()}</span>
+                <span style="font-size: 12px; color: #999;">Applied: ${app.appliedDate}</span>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Messages Functions
+function renderMessages() {
+    // Messages are pre-populated in HTML
+    // This function can be extended for dynamic messages
+}
+
 // Modal Functions
 function toggleLoginModal() {
-    const modal = document.getElementById('loginModal');
-    modal.classList.toggle('active');
+    document.getElementById('loginModal').classList.toggle('active');
 }
 
 function toggleRegisterModal() {
-    const modal = document.getElementById('registerModal');
-    modal.classList.toggle('active');
+    document.getElementById('registerModal').classList.toggle('active');
 }
 
 function toggleMenu() {
@@ -347,32 +381,14 @@ function toggleMenu() {
     navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
 }
 
-// Close modal when clicking outside
+// Close modal on outside click
 window.onclick = function(event) {
     const loginModal = document.getElementById('loginModal');
     const registerModal = document.getElementById('registerModal');
     
-    if (event.target === loginModal) {
-        loginModal.classList.remove('active');
-    }
-    if (event.target === registerModal) {
-        registerModal.classList.remove('active');
-    }
+    if (event.target === loginModal) loginModal.classList.remove('active');
+    if (event.target === registerModal) registerModal.classList.remove('active');
 }
-
-// Smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href !== '#') {
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-    });
-});
 
 // Initialize on page load
 window.addEventListener('DOMContentLoaded', initApp);
