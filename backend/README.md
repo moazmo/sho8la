@@ -31,7 +31,7 @@ npm run dev
 
 Server starts at `http://localhost:5000`
 
-## 📋 Phase 1-2 Features
+## 📋 Phase 1-3 Features
 
 ✅ User Authentication (Register/Login)  
 ✅ JWT Token Management  
@@ -40,6 +40,9 @@ Server starts at `http://localhost:5000`
 ✅ Job Management (CRUD)  
 ✅ Proposal System (Submit, Accept, Reject)  
 ✅ Job Filtering & Search  
+✅ Messaging System  
+✅ Reviews & Ratings  
+✅ University Verification  
 
 ## 🔌 API Endpoints
 
@@ -65,6 +68,23 @@ Server starts at `http://localhost:5000`
 - `POST /api/proposals` - Submit proposal (auth required)
 - `PUT /api/proposals/:id/accept` - Accept proposal (auth required, client only)
 - `PUT /api/proposals/:id/reject` - Reject proposal (auth required, client only)
+
+### Messages
+- `GET /api/messages/:conversationId` - Get conversation messages
+- `GET /api/messages/user/:userId` - Get user's conversations
+- `POST /api/messages` - Send message (auth required)
+- `PUT /api/messages/:id/read` - Mark message as read (auth required)
+
+### Reviews
+- `GET /api/reviews/user/:userId` - Get user reviews & rating
+- `GET /api/reviews/job/:jobId` - Get job reviews
+- `POST /api/reviews` - Create review (auth required)
+
+### Verifications
+- `GET /api/verifications/:userId` - Get verification status
+- `POST /api/verifications` - Submit verification (auth required)
+- `PUT /api/verifications/:id/approve` - Approve verification (admin)
+- `PUT /api/verifications/:id/reject` - Reject verification (admin)
 
 ### Health
 - `GET /api/health` - Check server status
@@ -96,6 +116,22 @@ Authorization: Bearer <token>
   coverLetter, status, createdAt }
 ```
 
+**Message Schema:**
+```javascript
+{ conversationId, senderId, receiverId, text, read, createdAt }
+```
+
+**Review Schema:**
+```javascript
+{ jobId, reviewerId, revieweeId, rating (1-5), comment, createdAt }
+```
+
+**Verification Schema:**
+```javascript
+{ userId, university, studentId, documentUrl, status, 
+  rejectionReason, submittedAt, verifiedAt }
+```
+
 ## 🛠️ Project Structure
 ```
 src/
@@ -106,10 +142,10 @@ src/
 └── server.js   # Entry point
 ```
 
-## ⚡ Next Steps (Phase 3)
-- Messaging System
-- Reviews & Ratings
-- Verification System
+## ⚡ Next Steps (Phase 4)
+- Payment Processing
+- Wallet Management
+- Additional Polish & Optimization
 
 ---
 Made with ❤️ for Sho8la
