@@ -6,7 +6,7 @@ Sho8la is more than just a marketplace. It's a community where verified students
 
 ## 📸 Meet Sho8la in Action
 
-![Sho8la Platform](docs/screenshots/sho8la-platform.png)
+![Sho8la Platform](docs/screenshots/home-page.png)
 
 ## ✨ Powerful Features Ready to Use
 
