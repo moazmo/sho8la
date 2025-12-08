@@ -1,407 +1,552 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sho8la - Connect Egyptian university students with freelance opportunities">
     <title>Sho8la - Student Freelance Platform</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
-        <div class="container">
-            <div class="nav-wrapper">
-                <div class="logo" onclick="navigate('home')">Sho8la.</div>
-                <ul class="nav-links">
-                    <li><a onclick="navigate('jobs')">Find Work</a></li>
-                    <li><a onclick="navigate('post-job')">Post Job</a></li>
-                    <li><a onclick="navigate('messages')">Messages</a></li>
-                    <li><a onclick="navigate('profile')">Profile</a></li>
-                </ul>
-                <div class="nav-auth">
-                    <span id="userDisplay" class="user-display"></span>
-                    <button class="btn-text" onclick="toggleLoginModal()" id="loginBtn">Login</button>
-                    <button class="btn-primary" onclick="toggleRegisterModal()" id="signupBtn">Sign Up</button>
-                    <button class="btn-text" onclick="logout()" id="logoutBtn">Logout</button>
-                </div>
-                <div class="hamburger" onclick="toggleMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+        <div class="container nav-wrapper">
+            <a class="logo" href="#" onclick="navigate('home')">Sho8la.</a>
+            <div class="nav-links"></div>
+            <div class="nav-auth" id="navAuth"></div>
         </div>
     </nav>
 
-    <!-- Pages Container -->
-    <div id="app">
-        <!-- PAGE 1: HOME -->
-        <div id="home-page" class="page active">
-            <section class="hero">
+    <main id="app">
+        <!-- Home -->
+        <section id="home-page" class="page active">
+            <!-- Hero -->
+            <div class="hero">
                 <div class="container">
-                    <div class="hero-content">
-                        <div class="badge">🎓 #1 Freelance Platform for Egyptian Students</div>
-                        <h1>Hire Top <span>Student Talent</span> in Egypt Securely.</h1>
-                        <p>Connect with verified CS students from Cairo University, Ain Shams, and more. Pay locally via InstaPay and Vodafone Cash.</p>
-                        <div class="hero-buttons">
-                            <button class="btn-primary" onclick="navigate('post-job')">Post a Job for Free</button>
-                            <button class="btn-secondary" onclick="navigate('jobs')">I Want to Work</button>
+                    <span class="badge">🎓 #1 Freelance Platform for Egyptian Students</span>
+                    <h1>Hire Top <span>Student Talent</span> in Egypt</h1>
+                    <p>Connect with verified CS students from top universities. Pay locally via InstaPay and Vodafone
+                        Cash.</p>
+                    <div class="hero-btns">
+                        <button class="btn btn-lg" onclick="openAuth(false)">Get Started Free</button>
+                        <button class="btn btn-outline btn-lg" onclick="navigate('how-it-works')">How It Works</button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Freelancers</span>
+                        </div>
+                        <div class="stat"><span class="stat-num">1,200+</span><span class="stat-label">Jobs Done</span>
+                        </div>
+                        <div class="stat"><span class="stat-num">4.9★</span><span class="stat-label">Avg Rating</span>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <section class="universities">
-                <div class="container">
-                    <p class="universities-label">TRUSTED BY STUDENTS FROM</p>
-                    <div class="universities-grid">
-                        <div class="uni-item">Cairo University</div>
-                        <div class="uni-item">Ain Shams</div>
-                        <div class="uni-item">AUC</div>
-                        <div class="uni-item">GUC</div>
-                        <div class="uni-item">FCAI</div>
-                    </div>
+            <!-- Features -->
+            <div class="features container">
+                <div class="feature"><span class="icon">🛡️</span>
+                    <h3>Escrow Protection</h3>
+                    <p>Money held until work is done</p>
                 </div>
-            </section>
-
-            <section class="features">
-                <div class="container">
-                    <div class="features-grid">
-                        <div class="feature-card">
-                            <div class="feature-icon">🛡️</div>
-                            <h3>Escrow Protection</h3>
-                            <p>We hold the money until the work is done.</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">💳</div>
-                            <h3>Local Payments</h3>
-                            <p>InstaPay, Fawry and Wallets. No PayPal issues.</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">✓</div>
-                            <h3>Verified Students</h3>
-                            <p>University ID verified for trust.</p>
-                        </div>
-                    </div>
+                <div class="feature"><span class="icon">💳</span>
+                    <h3>Local Payments</h3>
+                    <p>InstaPay, Fawry, Wallets</p>
                 </div>
-            </section>
+                <div class="feature"><span class="icon">✓</span>
+                    <h3>Verified Students</h3>
+                    <p>University ID verified</p>
+                </div>
+                <div class="feature"><span class="icon">💬</span>
+                    <h3>Direct Chat</h3>
+                    <p>Message freelancers instantly</p>
+                </div>
+            </div>
 
-            <section class="how-it-works">
+            <!-- How It Works Preview -->
+            <div class="section-alt">
                 <div class="container">
-                    <h2>How It Works</h2>
+                    <h2 class="section-heading">How It Works</h2>
                     <div class="steps">
                         <div class="step">
-                            <div class="step-number">1</div>
-                            <h3>Sign Up</h3>
+                            <div class="step-num">1</div>
+                            <h4>Post a Job</h4>
+                            <p>Describe what you need done</p>
                         </div>
                         <div class="step">
-                            <div class="step-number">2</div>
-                            <h3>Verify</h3>
+                            <div class="step-num">2</div>
+                            <h4>Get Proposals</h4>
+                            <p>Students bid on your project</p>
                         </div>
                         <div class="step">
-                            <div class="step-number">3</div>
-                            <h3>Browse</h3>
+                            <div class="step-num">3</div>
+                            <h4>Hire & Pay</h4>
+                            <p>Choose the best, pay securely</p>
                         </div>
-                        <div class="step">
-                            <div class="step-number">4</div>
-                            <h3>Apply</h3>
+                    </div>
+                    <a class="btn btn-outline" onclick="navigate('how-it-works')">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="container section-pad">
+                <h2 class="section-heading">Popular Categories</h2>
+                <div class="categories">
+                    <div class="category" onclick="navigate('jobs')">💻 Web Development</div>
+                    <div class="category" onclick="navigate('jobs')">🎨 Design</div>
+                    <div class="category" onclick="navigate('jobs')">📊 Data Science</div>
+                    <div class="category" onclick="navigate('jobs')">✍️ Writing</div>
+                    <div class="category" onclick="navigate('jobs')">📱 Mobile Apps</div>
+                    <div class="category" onclick="navigate('jobs')">🎥 Video Editing</div>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="section-alt">
+                <div class="container">
+                    <h2 class="section-heading">What People Say</h2>
+                    <div class="testimonials">
+                        <div class="testimonial">
+                            <p>"Found an amazing developer from GUC. Delivered my app in 2 weeks!"</p>
+                            <div class="testimonial-author">— Ahmed K., Startup Founder</div>
                         </div>
-                        <div class="step">
-                            <div class="step-number">5</div>
-                            <h3>Work</h3>
+                        <div class="testimonial">
+                            <p>"As a student, Sho8la helped me earn while learning. Great platform!"</p>
+                            <div class="testimonial-author">— Mona S., FCAIH Student</div>
                         </div>
-                        <div class="step">
-                            <div class="step-number">6</div>
-                            <h3>Pay</h3>
+                        <div class="testimonial">
+                            <p>"InstaPay integration makes payment so easy. Highly recommend!"</p>
+                            <div class="testimonial-author">— Omar H., Business Owner</div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
 
-        <!-- PAGE 2: JOBS BROWSE -->
-        <div id="jobs-page" class="page">
-            <section class="page-section">
-                <div class="container">
-                    <h1>Browse Jobs</h1>
-                    <div class="search-filter">
-                        <input type="text" id="jobSearch" placeholder="Search jobs..." onkeyup="filterJobs()">
-                        <select id="jobFilter" onchange="filterJobs()">
-                            <option value="">All Categories</option>
-                            <option value="web">Web Development</option>
-                            <option value="design">Design</option>
-                            <option value="data">Data Science</option>
-                            <option value="writing">Writing</option>
-                        </select>
-                    </div>
-                    <div class="jobs-grid" id="jobsList"></div>
+            <!-- CTA -->
+            <div class="cta container">
+                <h2>Ready to Get Started?</h2>
+                <p>Join thousands of students and clients on Egypt's top freelance platform</p>
+                <div class="cta-btns">
+                    <button class="btn btn-lg" onclick="openAuth(false)">Find Talent</button>
+                    <button class="btn btn-outline btn-lg" onclick="openAuth(false)">Become a Freelancer</button>
                 </div>
-            </section>
-        </div>
+            </div>
 
-        <!-- PAGE 3: POST JOB -->
-        <div id="post-job-page" class="page">
-            <section class="page-section">
-                <div class="container">
-                    <h1>Post a New Job</h1>
-                    <div class="form-container">
-                        <form onsubmit="postJob(event)">
-                            <div class="form-group">
-                                <label>Job Title *</label>
-                                <input type="text" required placeholder="e.g., Build Website">
-                            </div>
-                            <div class="form-group">
-                                <label>Description *</label>
-                                <textarea required placeholder="Describe what you need..." rows="5"></textarea>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label>Category *</label>
-                                    <select required>
-                                        <option value="">Select category</option>
-                                        <option value="web">Web Development</option>
-                                        <option value="design">Design</option>
-                                        <option value="data">Data Science</option>
-                                        <option value="writing">Writing</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Budget (EGP) *</label>
-                                    <input type="number" required placeholder="1000" min="100">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Skills Required</label>
-                                <input type="text" placeholder="React, Node.js (comma separated)">
-                            </div>
-                            <button type="submit" class="btn-primary btn-full">Post Job</button>
-                        </form>
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container footer-content">
+                    <div class="footer-brand"><span class="logo">Sho8la.</span>
+                        <p>Connecting Egyptian students with opportunities</p>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-col">
+                            <h5>Platform</h5><a onclick="navigate('jobs')">Browse Jobs</a><a
+                                onclick="navigate('how-it-works')">How It Works</a>
+                        </div>
+                        <div class="footer-col">
+                            <h5>Company</h5><a onclick="navigate('about')">About Us</a><a
+                                onclick="navigate('contact')">Contact</a>
+                        </div>
+                        <div class="footer-col">
+                            <h5>Support</h5><a onclick="navigate('help')">Help Center</a><a
+                                onclick="navigate('contact')">Report Issue</a>
+                        </div>
                     </div>
                 </div>
-            </section>
-        </div>
+                <div class="footer-bottom container">
+                    <p>© 2025 Sho8la. Made with ❤️ for Egyptian students.</p>
+                </div>
+            </footer>
+        </section>
 
-        <!-- PAGE 4: MESSAGES -->
-        <div id="messages-page" class="page">
-            <section class="page-section">
-                <div class="container">
-                    <h1>Messages</h1>
-                    <div class="messages-container">
-                        <div class="messages-list" id="messagesList">
-                            <div class="message-item">
-                                <div class="message-avatar">👤</div>
-                                <div class="message-content">
-                                    <h4>Ahmed M.</h4>
-                                    <p>Hi, are you available for a web project?</p>
-                                    <span class="message-time">2 hours ago</span>
-                                </div>
+        <!-- Jobs (Freelancer) -->
+        <section id="jobs-page" class="page">
+            <div class="container page-content">
+                <h1>Browse Jobs</h1>
+                <div class="filters">
+                    <input type="text" id="searchInput" placeholder="Search jobs..." oninput="renderJobs()">
+                    <select id="categoryFilter" title="Filter by category" onchange="renderJobs()">
+                        <option value="">All Categories</option>
+                        <option value="web">Web Development</option>
+                        <option value="design">Design</option>
+                        <option value="data">Data Science</option>
+                        <option value="writing">Writing</option>
+                    </select>
+                </div>
+                <div class="grid" id="jobsList"></div>
+            </div>
+        </section>
+
+        <!-- My Jobs (Client) -->
+        <section id="my-jobs-page" class="page">
+            <div class="container page-content">
+                <h1>My Posted Jobs</h1>
+                <div class="grid" id="myJobsList"></div>
+            </div>
+        </section>
+
+        <!-- Post Job (Client) -->
+        <section id="post-job-page" class="page">
+            <div class="container page-content">
+                <h1>Post a Job</h1>
+                <form class="form-card" onsubmit="postJob(event)">
+                    <div class="form-group"><label>Job Title *</label><input type="text" name="title" required
+                            placeholder="e.g., Build Portfolio Website"></div>
+                    <div class="form-group"><label>Description *</label><textarea name="description" required rows="4"
+                            placeholder="Describe what you need..."></textarea></div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Category *</label>
+                            <select name="category" title="Select category" required>
+                                <option value="">Select</option>
+                                <option value="web">Web Development</option>
+                                <option value="design">Design</option>
+                                <option value="data">Data Science</option>
+                                <option value="writing">Writing</option>
+                            </select>
+                        </div>
+                        <div class="form-group"><label>Budget (EGP) *</label><input type="number" name="budget" required
+                                min="100" placeholder="1000"></div>
+                    </div>
+                    <div class="form-group"><label>Skills Required</label><input type="text" name="skills"
+                            placeholder="React, Node.js (comma separated)"></div>
+                    <button type="submit" class="btn btn-full">Post Job</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Proposals (Freelancer) -->
+        <section id="proposals-page" class="page">
+            <div class="container page-content">
+                <h1>My Proposals</h1>
+                <div id="proposalsList"></div>
+            </div>
+        </section>
+
+        <!-- Wallet -->
+        <section id="wallet-page" class="page">
+            <div class="container page-content">
+                <h1>Wallet</h1>
+                <div id="walletContent"></div>
+            </div>
+        </section>
+
+        <!-- Messages -->
+        <section id="messages-page" class="page">
+            <div class="container page-content">
+                <h1>Messages</h1>
+                <div id="messagesContent"></div>
+            </div>
+        </section>
+
+        <!-- Verify ID (Freelancer) -->
+        <section id="verify-page" class="page">
+            <div class="container page-content">
+                <h1>University Verification</h1>
+                <div id="verifyContent"></div>
+            </div>
+        </section>
+
+        <!-- Profile -->
+        <section id="profile-page" class="page">
+            <div class="container page-content">
+                <h1>My Profile</h1>
+                <div id="profileContent"></div>
+            </div>
+        </section>
+
+        <!-- Admin Dashboard -->
+        <section id="admin-page" class="page">
+            <div class="container page-content">
+                <h1>Admin Dashboard</h1>
+                <div class="stats-grid" id="adminStats"></div>
+                <h2 class="section-title">Pending Verifications</h2>
+                <div id="pendingVerifications"></div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section id="how-it-works-page" class="page">
+            <div class="container page-content">
+                <h1>How Sho8la Works</h1>
+                <div class="content-card">
+                    <h2>For Clients</h2>
+                    <div class="steps-vertical">
+                        <div class="step-v"><span class="step-icon">1</span>
+                            <div>
+                                <h4>Post Your Job</h4>
+                                <p>Describe what you need, set your budget, and post. It takes less than 5 minutes.</p>
                             </div>
-                            <div class="message-item">
-                                <div class="message-avatar">👤</div>
-                                <div class="message-content">
-                                    <h4>Sara K.</h4>
-                                    <p>Thanks for applying to my design job!</p>
-                                    <span class="message-time">1 day ago</span>
-                                </div>
+                        </div>
+                        <div class="step-v"><span class="step-icon">2</span>
+                            <div>
+                                <h4>Review Proposals</h4>
+                                <p>Receive proposals from verified students. Check their profiles, ratings, and
+                                    portfolios.</p>
+                            </div>
+                        </div>
+                        <div class="step-v"><span class="step-icon">3</span>
+                            <div>
+                                <h4>Hire & Fund Escrow</h4>
+                                <p>Choose the best freelancer and fund the project. Money is held safely until you
+                                    approve.</p>
+                            </div>
+                        </div>
+                        <div class="step-v"><span class="step-icon">4</span>
+                            <div>
+                                <h4>Get Work Done</h4>
+                                <p>Communicate via chat, track progress, and release payment when satisfied.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
-
-        <!-- PAGE 5: PROFILE -->
-        <div id="profile-page" class="page">
-            <section class="page-section">
-                <div class="container">
-                    <h1>My Profile</h1>
-                    <div id="profileContent"></div>
+                <div class="content-card">
+                    <h2>For Freelancers</h2>
+                    <div class="steps-vertical">
+                        <div class="step-v"><span class="step-icon">1</span>
+                            <div>
+                                <h4>Create Profile</h4>
+                                <p>Sign up, verify your university ID, and showcase your skills.</p>
+                            </div>
+                        </div>
+                        <div class="step-v"><span class="step-icon">2</span>
+                            <div>
+                                <h4>Browse & Apply</h4>
+                                <p>Find jobs matching your skills. Send compelling proposals with your best bid.</p>
+                            </div>
+                        </div>
+                        <div class="step-v"><span class="step-icon">3</span>
+                            <div>
+                                <h4>Work & Deliver</h4>
+                                <p>Get hired, communicate with clients, and deliver quality work.</p>
+                            </div>
+                        </div>
+                        <div class="step-v"><span class="step-icon">4</span>
+                            <div>
+                                <h4>Get Paid</h4>
+                                <p>Receive payment via InstaPay or Vodafone Cash. Build your reputation with reviews.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </section>
-        </div>
+                <div class="cta-inline"><a class="btn btn-lg" onclick="openAuth(false)">Get Started Now</a></div>
+            </div>
+        </section>
 
-        <!-- PAGE 6: VERIFY ID -->
-        <div id="verify-page" class="page">
-            <section class="page-section">
-                <div class="container">
-                    <h1>University ID Verification</h1>
-                    <div class="verify-container">
-                        <div id="verificationStatus"></div>
-                        <form id="verifyForm" onsubmit="submitVerification(event)">
-                            <div class="form-group">
-                                <label>University *</label>
-                                <select required>
-                                    <option value="">Select University</option>
-                                    <option value="cairo">Cairo University</option>
-                                    <option value="ain_shams">Ain Shams</option>
-                                    <option value="auc">AUC</option>
-                                    <option value="guc">GUC</option>
-                                    <option value="fcai">FCAI</option>
+        <!-- About -->
+        <section id="about-page" class="page">
+            <div class="container page-content">
+                <h1>About Sho8la</h1>
+                <div class="content-card">
+                    <h2>Our Mission</h2>
+                    <p>Sho8la was created to bridge the gap between talented Egyptian university students and businesses
+                        seeking quality work at affordable rates. We believe every student deserves the opportunity to
+                        gain real-world experience and earn while they learn.</p>
+                </div>
+                <div class="content-card">
+                    <h2>Why Sho8la?</h2>
+                    <ul class="feature-list">
+                        <li>🎓 <b>Verified Students Only</b> - Every freelancer is verified with their university ID
+                        </li>
+                        <li>💳 <b>Local Payments</b> - Pay and get paid via InstaPay, Vodafone Cash, or Fawry</li>
+                        <li>🛡️ <b>Secure Escrow</b> - Your money is protected until work is approved</li>
+                        <li>💬 <b>Direct Communication</b> - Chat with freelancers before and during projects</li>
+                        <li>⭐ <b>Quality Assured</b> - Rating system ensures top-quality work</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h2>Our Universities</h2>
+                    <p>We work with students from Egypt's top institutions including Cairo University, Ain Shams, AUC,
+                        GUC, and FCAIH.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact-page" class="page">
+            <div class="container page-content">
+                <h1>Contact Us</h1>
+                <div class="contact-grid">
+                    <div class="content-card">
+                        <h2>Get in Touch</h2>
+                        <form class="contact-form" onsubmit="submitContact(event)">
+                            <div class="form-group"><label>Name *</label><input name="name" required
+                                    placeholder="Your name"></div>
+                            <div class="form-group"><label>Email *</label><input type="email" name="email" required
+                                    placeholder="your@email.com"></div>
+                            <div class="form-group"><label>Subject *</label>
+                                <select name="subject" title="Select subject" required>
+                                    <option value="">Select topic</option>
+                                    <option>General Inquiry</option>
+                                    <option>Technical Support</option>
+                                    <option>Payment Issue</option>
+                                    <option>Report User</option>
+                                    <option>Partnership</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label>Student ID *</label>
-                                <input type="text" required placeholder="Your student ID">
-                            </div>
-                            <div class="form-group">
-                                <label>Upload ID Document *</label>
-                                <input type="file" required accept="image/*">
-                            </div>
-                            <button type="submit" class="btn-primary btn-full">Submit Verification</button>
+                            <div class="form-group"><label>Message *</label><textarea name="message" rows="4" required
+                                    placeholder="How can we help?"></textarea></div>
+                            <button type="submit" class="btn btn-full">Send Message</button>
                         </form>
                     </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- PAGE 7: MY APPLICATIONS -->
-        <div id="applications-page" class="page">
-            <section class="page-section">
-                <div class="container">
-                    <h1>My Applications</h1>
-                    <div class="applications-list" id="applicationsList"></div>
-                </div>
-            </section>
-        </div>
-
-        <!-- PAGE 8: WALLET -->
-        <div id="wallet-page" class="page">
-            <section class="page-section">
-                <div class="container">
-                    <h1>Wallet & Payments</h1>
-                    <div class="wallet-container">
-                        <div class="wallet-card">
-                            <h3>Available Balance</h3>
-                            <div class="balance">0 EGP</div>
-                            <button class="btn-primary" onclick="alert('Withdraw functionality coming soon')">Withdraw</button>
+                    <div class="content-card">
+                        <h2>Other Ways to Reach Us</h2>
+                        <div class="contact-info">
+                            <p>📧 <b>Email:</b> support@sho8la.com</p>
+                            <p>💬 <b>WhatsApp:</b> +20 100 123 4567</p>
+                            <p>📍 <b>Location:</b> Cairo, Egypt</p>
+                            <p>🕐 <b>Hours:</b> Sun-Thu, 9AM-6PM</p>
                         </div>
-                        <div class="wallet-card">
-                            <h3>Transaction History</h3>
-                            <p class="text-muted">No transactions yet</p>
+                        <h3>Follow Us</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link">Facebook</a>
+                            <a href="#" class="social-link">Twitter</a>
+                            <a href="#" class="social-link">LinkedIn</a>
+                            <a href="#" class="social-link">Instagram</a>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
 
-        <!-- PAGE 9: HELP & SUPPORT -->
-        <div id="help-page" class="page">
-            <section class="page-section">
-                <div class="container">
-                    <h1>Help & Support</h1>
-                    <div class="help-container">
-                        <div class="faq-item">
-                            <h3>How do I post a job?</h3>
-                            <p>Click "Post Job" in the navigation menu, fill in the details, and submit. Your job will be visible to all students.</p>
-                        </div>
-                        <div class="faq-item">
-                            <h3>How does payment work?</h3>
-                            <p>Payments are held in escrow. The client releases payment after confirming the work is complete.</p>
-                        </div>
-                        <div class="faq-item">
-                            <h3>Why do I need to verify my ID?</h3>
-                            <p>Verification ensures all users are real students, building trust in the community.</p>
-                        </div>
-                        <div class="faq-item">
-                            <h3>How do I contact support?</h3>
-                            <p>Email us at support@sho8la.com or use the help section in your profile.</p>
-                        </div>
-                        <div class="faq-item">
-                            <h3>What payment methods are accepted?</h3>
-                            <p>We accept InstaPay, Vodafone Cash, and other local Egyptian payment methods.</p>
-                        </div>
-                        <div class="faq-item">
-                            <h3>Can I change my role after signup?</h3>
-                            <p>Yes, you can switch roles from your profile settings at any time.</p>
-                        </div>
+        <!-- Help -->
+        <section id="help-page" class="page">
+            <div class="container page-content">
+                <h1>Help Center</h1>
+                <div class="content-card">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-list">
+                        <details class="faq-item">
+                            <summary>How do I create an account?</summary>
+                            <p>Click "Sign Up" in the top right, enter your details, and choose whether you want to hire
+                                (Client) or work (Freelancer).</p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>How does payment work?</summary>
+                            <p>Clients fund projects via InstaPay or Vodafone Cash. Money is held in escrow and released
+                                to freelancers upon approval.</p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>How do I verify my student ID?</summary>
+                            <p>Go to your Profile, click "Verify Now", upload your university ID, and wait for admin
+                                approval (usually within 24 hours).</p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>What if I'm not satisfied with the work?</summary>
+                            <p>You can request revisions or contact support. Payment is only released when you approve
+                                the work.</p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>How do I withdraw my earnings?</summary>
+                            <p>Go to Wallet, click "Withdraw", enter the amount, and select your payment method. Funds
+                                arrive within 1-3 business days.</p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>Is there a fee for using Sho8la?</summary>
+                            <p>Sho8la charges a 10% service fee on completed projects, split between client and
+                                freelancer.</p>
+                        </details>
                     </div>
                 </div>
-            </section>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>For Clients</h4>
-                    <ul>
-                        <li><a onclick="navigate('post-job')">Post a Job</a></li>
-                        <li><a onclick="navigate('jobs')">Browse Talent</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>For Students</h4>
-                    <ul>
-                        <li><a onclick="navigate('jobs')">Browse Jobs</a></li>
-                        <li><a onclick="navigate('profile')">My Profile</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a onclick="navigate('help')">Help & FAQ</a></li>
-                        <li><a onclick="navigate('wallet')">Wallet</a></li>
-                    </ul>
+                <div class="content-card">
+                    <h2>Still Need Help?</h2>
+                    <p>Can't find what you're looking for? Our support team is here to help.</p>
+                    <a class="btn" onclick="navigate('contact')">Contact Support</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Sho8la. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+        </section>
+    </main>
 
-    <!-- Login Modal -->
-    <div id="loginModal" class="modal">
+    <!-- Proposal Modal -->
+    <div class="modal" id="proposalModal">
         <div class="modal-content">
-            <span class="modal-close" onclick="toggleLoginModal()">&times;</span>
-            <h2>Login to Sho8la</h2>
-            <form onsubmit="handleLogin(event)">
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" required placeholder="your@email.com">
-                </div>
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" required placeholder="Enter password">
-                </div>
-                <button type="submit" class="btn-primary btn-full">Login</button>
+            <span class="modal-close" onclick="closeModal('proposalModal')">&times;</span>
+            <h2>Submit Proposal</h2>
+            <form id="proposalForm" onsubmit="submitProposal(event)">
+                <input type="hidden" name="jobId">
+                <div class="form-group"><label>Bid Amount (EGP) *</label><input type="number" name="bidAmount" required
+                        min="100" placeholder="Your price"></div>
+                <div class="form-group"><label>Delivery Days *</label><input type="number" name="deliveryDays" required
+                        min="1" placeholder="Days to complete"></div>
+                <div class="form-group"><label>Cover Letter *</label><textarea name="coverLetter" required rows="4"
+                        placeholder="Why are you the best fit?"></textarea></div>
+                <button type="submit" class="btn btn-full">Submit Proposal</button>
             </form>
         </div>
     </div>
 
-    <!-- Register Modal -->
-    <div id="registerModal" class="modal">
+    <!-- Add Funds Modal (Client) -->
+    <div class="modal" id="addFundsModal">
         <div class="modal-content">
-            <span class="modal-close" onclick="toggleRegisterModal()">&times;</span>
-            <h2>Join Sho8la</h2>
-            <form onsubmit="handleRegister(event)">
+            <span class="modal-close" onclick="closeModal('addFundsModal')">&times;</span>
+            <h2>Add Funds</h2>
+            <form onsubmit="addFunds(event)">
+                <div class="form-group"><label>Amount (EGP) *</label><input type="number" name="fundAmount" required
+                        min="100" placeholder="Minimum 100 EGP"></div>
                 <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" required placeholder="Your name">
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" required placeholder="your@email.com">
-                </div>
-                <div class="form-group">
-                    <label>Role</label>
-                    <select required>
-                        <option value="">Select role</option>
-                        <option value="student">I'm a Student (Freelancer)</option>
-                        <option value="client">I'm a Client (Hiring)</option>
+                    <label>Payment Method</label>
+                    <select title="Select payment method">
+                        <option>InstaPay</option>
+                        <option>Vodafone Cash</option>
+                        <option>Fawry</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" required placeholder="Min. 6 characters">
+                <button type="submit" class="btn btn-full">Add Funds</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div class="modal" id="reviewModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('reviewModal')">&times;</span>
+            <h2>Review Freelancer</h2>
+            <p>Rate <b id="reviewFreelancerName"></b></p>
+            <form onsubmit="submitReview(event)">
+                <input type="hidden" name="reviewJobId">
+                <input type="hidden" name="reviewFreelancerId">
+                <div class="form-group"><label>Rating *</label>
+                    <select name="rating" title="Select rating" required>
+                        <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+                        <option value="4">⭐⭐⭐⭐ Good</option>
+                        <option value="3">⭐⭐⭐ Average</option>
+                        <option value="2">⭐⭐ Poor</option>
+                        <option value="1">⭐ Terrible</option>
+                    </select>
                 </div>
-                <button type="submit" class="btn-primary btn-full">Create Account</button>
+                <div class="form-group"><label>Comment</label><textarea name="comment" rows="3"
+                        placeholder="Share your experience..."></textarea></div>
+                <button type="submit" class="btn btn-full">Submit Review</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('authModal')">&times;</span>
+            <h2 id="authTitle">Login</h2>
+            <form id="authForm" onsubmit="handleAuth(event)">
+                <div class="form-group hidden" id="nameGroup"><label>Full Name</label><input type="text" name="name"
+                        placeholder="Your name"></div>
+                <div class="form-group"><label>Email</label><input type="email" name="email" required
+                        placeholder="your@email.com"></div>
+                <div class="form-group"><label>Password</label><input type="password" name="password" required
+                        placeholder="Min 6 characters"></div>
+                <div class="form-group hidden" id="roleGroup">
+                    <label>I want to...</label>
+                    <select name="role" title="Select your role">
+                        <option value="freelancer">Work as a Freelancer</option>
+                        <option value="client">Hire Freelancers</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-full" id="authBtn">Login</button>
+                <p class="auth-switch"><span id="authSwitch" onclick="toggleAuthMode()"></span></p>
             </form>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

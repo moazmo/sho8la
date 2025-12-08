@@ -1,0 +1,239 @@
+{
+  "users": [
+    {
+      "id": "admin",
+      "name": "Admin",
+      "email": "admin@sho8la.com",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "id": "u1765162199857",
+      "email": "moaz@gmail.com",
+      "password": "moazmo27",
+      "name": "Moaz",
+      "role": "freelancer"
+    },
+    {
+      "id": "u1765162317027",
+      "email": "moaz_1@gmail.com",
+      "password": "moazmo27",
+      "name": "Moaz_1",
+      "role": "client"
+    }
+  ],
+  "jobs": [
+    {
+      "id": 1765164040697,
+      "status": "completed",
+      "clientId": "u1765162317027",
+      "clientName": "Moaz_1",
+      "title": "gdfgf",
+      "description": "gdfgdfg",
+      "category": "web",
+      "budget": 3243,
+      "skills": [
+        "dgs"
+      ]
+    },
+    {
+      "id": 1765162369398,
+      "status": "completed",
+      "clientId": "u1765162317027",
+      "clientName": "Moaz_1",
+      "title": "Build a website",
+      "description": "I want a good Frontend Developer",
+      "category": "web",
+      "budget": 2500,
+      "skills": [
+        "React",
+        "NodeJS"
+      ]
+    },
+    {
+      "id": 1,
+      "title": "Build E-commerce Website",
+      "clientId": "c1",
+      "clientName": "Ahmed M.",
+      "description": "Full-stack e-commerce with payment.",
+      "category": "web",
+      "budget": 2000,
+      "skills": [
+        "React",
+        "Node.js"
+      ],
+      "status": "open"
+    },
+    {
+      "id": 2,
+      "title": "Mobile App UI Design",
+      "clientId": "c2",
+      "clientName": "Sara K.",
+      "description": "Design UI for study planning app.",
+      "category": "design",
+      "budget": 1000,
+      "skills": [
+        "Figma",
+        "UI/UX"
+      ],
+      "status": "open"
+    },
+    {
+      "id": 3,
+      "title": "Data Analysis Project",
+      "clientId": "c1",
+      "clientName": "Ahmed M.",
+      "description": "Analyze dataset and visualize.",
+      "category": "data",
+      "budget": 1500,
+      "skills": [
+        "Python"
+      ],
+      "status": "open"
+    }
+  ],
+  "proposals": [
+    {
+      "id": 1765162231580,
+      "status": "pending",
+      "jobId": 1,
+      "jobTitle": "Build E-commerce Website",
+      "clientId": "c1",
+      "freelancerId": "u1765162199857",
+      "freelancerName": "Moaz",
+      "bidAmount": 200,
+      "deliveryDays": 3,
+      "coverLetter": "hi"
+    },
+    {
+      "id": 1765162400012,
+      "status": "accepted",
+      "jobId": 1765162369398,
+      "jobTitle": "Build a website",
+      "clientId": "u1765162317027",
+      "freelancerId": "u1765162199857",
+      "freelancerName": "Moaz",
+      "bidAmount": 500,
+      "deliveryDays": 3,
+      "coverLetter": "hi"
+    },
+    {
+      "id": 1765164060157,
+      "status": "accepted",
+      "jobId": 1765164040697,
+      "jobTitle": "gdfgf",
+      "clientId": "u1765162317027",
+      "freelancerId": "u1765162199857",
+      "freelancerName": "Moaz",
+      "bidAmount": 324,
+      "deliveryDays": 3,
+      "coverLetter": "hi"
+    }
+  ],
+  "verifications": [
+    {
+      "id": 1765162266993,
+      "status": "verified",
+      "userId": "u1765162199857",
+      "userName": "Moaz",
+      "userEmail": "moaz@gmail.com",
+      "university": "FCAIH",
+      "studentId": "3243434"
+    }
+  ],
+  "wallets": {
+    "u1765162199857": {
+      "balance": 224,
+      "transactions": [
+        {
+          "type": "credit",
+          "amount": 324,
+          "desc": "Earned from: gdfgf",
+          "date": "2025-12-08T03:21:32.107Z"
+        },
+        {
+          "type": "debit",
+          "amount": 100,
+          "desc": "Withdrawal",
+          "date": "2025-12-08T03:22:22.212Z"
+        }
+      ]
+    },
+    "u1765162317027": {
+      "balance": 1176,
+      "transactions": [
+        {
+          "type": "credit",
+          "amount": 1000,
+          "desc": "Added funds",
+          "date": "2025-12-08T02:52:06.897Z"
+        },
+        {
+          "type": "credit",
+          "amount": 500,
+          "desc": "Added funds",
+          "date": "2025-12-08T03:08:33.537Z"
+        },
+        {
+          "type": "debit",
+          "amount": 324,
+          "desc": "Payment for: gdfgf",
+          "date": "2025-12-08T03:21:32.107Z"
+        }
+      ]
+    },
+    "admin": {
+      "balance": 0,
+      "transactions": []
+    }
+  },
+  "messages": [
+    {
+      "id": 1765162570694,
+      "time": "2025-12-08T02:56:10.694Z",
+      "from": "u1765162199857",
+      "fromName": "Moaz",
+      "to": "u1765162199857",
+      "toName": "Moaz",
+      "text": "Hi"
+    },
+    {
+      "id": 1765162597864,
+      "time": "2025-12-08T02:56:37.864Z",
+      "from": "u1765162317027",
+      "fromName": "Moaz_1",
+      "to": "u1765162199857",
+      "toName": "Moaz",
+      "text": "Hi"
+    },
+    {
+      "id": 1765163238776,
+      "time": "2025-12-08T03:07:18.776Z",
+      "from": "u1765162199857",
+      "fromName": "Moaz",
+      "to": "u1765162317027",
+      "toName": "Moaz_1",
+      "text": "Hi bro, how are u?"
+    },
+    {
+      "id": 1765163305777,
+      "time": "2025-12-08T03:08:25.777Z",
+      "from": "u1765162317027",
+      "fromName": "Moaz_1",
+      "to": "u1765162199857",
+      "toName": "Moaz",
+      "text": "I'm doing great!"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1765162530113,
+      "date": "2025-12-08T02:55:30.113Z",
+      "jobId": 1765162369398,
+      "freelancerId": "u1765162199857",
+      "clientId": "u1765162317027",
+      "rating": 5,
+      "comment": "Very good"
+    }
+  ]
+}
