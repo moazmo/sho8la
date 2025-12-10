@@ -2,7 +2,7 @@ const express = require('express');
 const Payment = require('../models/Payment');
 const Wallet = require('../models/Wallet');
 const Job = require('../models/Job');
-const authMiddleware = require('../middleware/auth');
+const { clientOnly } = require('../middleware/roleAuth');
 
 const router = express.Router();
 
@@ -37,7 +37,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Create payment (client initiates payment)
-router.post('/', authMiddleware, async (req, res) => {
+router.post('/', clientOnly, async (req, res) => {
   try {
     const { jobId, freelancerId, amount, method } = req.body;
 
@@ -120,7 +120,7 @@ router.put('/:id/complete', async (req, res) => {
 });
 
 // Refund payment
-router.put('/:id/refund', authMiddleware, async (req, res) => {
+router.put('/:id/refund', clientOnly, async (req, res) => {
   try {
     const payment = await Payment.findById(req.params.id);
     if (!payment) return res.status(404).json({ error: 'Payment not found' });

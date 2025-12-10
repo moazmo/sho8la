@@ -7,7 +7,11 @@
     "dev": "node src/server.js",
     "start": "node src/server.js"
   },
-  "keywords": ["freelance", "students", "marketplace"],
+  "keywords": [
+    "freelance",
+    "students",
+    "marketplace"
+  ],
   "author": "Sho8la Team",
   "license": "MIT",
   "type": "commonjs",
@@ -17,6 +21,7 @@
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
-    "mongoose": "^9.0.1"
+    "mongoose": "^9.0.1",
+    "nodemailer": "^7.0.11"
   }
 }

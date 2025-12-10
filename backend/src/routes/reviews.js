@@ -1,7 +1,8 @@
 const express = require('express');
 const Review = require('../models/Review');
+const Job = require('../models/Job');
 const User = require('../models/User');
-const authMiddleware = require('../middleware/auth');
+const { authOnly } = require('../middleware/roleAuth');
 
 const router = express.Router();
 
@@ -9,13 +10,14 @@ const router = express.Router();
 router.get('/user/:userId', async (req, res) => {
   try {
     const reviews = await Review.find({ revieweeId: req.params.userId })
-      .populate('reviewerId', 'name profile.rating')
+      .populate('reviewerId', 'name verified isStudent')
+      .populate('jobId', 'title')
       .sort({ createdAt: -1 });
-    
-    const avgRating = reviews.length > 0 
+
+    const avgRating = reviews.length > 0
       ? (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1)
       : 0;
-    
+
     res.json({ reviews, avgRating, totalReviews: reviews.length });
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -34,38 +36,51 @@ router.get('/job/:jobId', async (req, res) => {
   }
 });
 
-// Create review
-router.post('/', authMiddleware, async (req, res) => {
+// Create review (only for completed jobs)
+router.post('/', authOnly, async (req, res) => {
   try {
     const { jobId, revieweeId, rating, comment } = req.body;
 
     if (!jobId || !revieweeId || !rating) {
       return res.status(400).json({ error: 'Missing required fields' });
     }
-
     if (rating < 1 || rating > 5) {
-      return res.status(400).json({ error: 'Rating must be between 1 and 5' });
+      return res.status(400).json({ error: 'Rating must be 1-5' });
     }
 
-    const existingReview = await Review.findOne({ jobId, reviewerId: req.userId });
-    if (existingReview) {
-      return res.status(400).json({ error: 'You already reviewed this job' });
+    // Verify job is completed and user was part of it
+    const job = await Job.findById(jobId);
+    if (!job) return res.status(404).json({ error: 'Job not found' });
+    if (job.status !== 'completed') {
+      return res.status(400).json({ error: 'Can only review completed jobs' });
     }
 
-    const review = new Review({
-      jobId,
-      reviewerId: req.userId,
-      revieweeId,
-      rating,
-      comment
+    const isClient = job.clientId.toString() === req.userId;
+    const isFreelancer = job.freelancerId?.toString() === req.userId;
+    if (!isClient && !isFreelancer) {
+      return res.status(403).json({ error: 'Not part of this job' });
+    }
+
+    // Check target is the other party
+    const validTarget = isClient
+      ? revieweeId === job.freelancerId?.toString()
+      : revieweeId === job.clientId.toString();
+    if (!validTarget) {
+      return res.status(400).json({ error: 'Invalid reviewee' });
+    }
+
+    const existing = await Review.findOne({ jobId, reviewerId: req.userId });
+    if (existing) {
+      return res.status(400).json({ error: 'Already reviewed' });
+    }
+
+    const review = await Review.create({
+      jobId, reviewerId: req.userId, revieweeId, rating, comment
     });
 
-    await review.save();
-
-    // Update user rating
-    const reviews = await Review.find({ revieweeId });
-    const avgRating = (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1);
-    await User.findByIdAndUpdate(revieweeId, { 'profile.rating': avgRating });
+    // Update user's average rating
+    const reviewee = await User.findById(revieweeId);
+    await reviewee.updateRating(rating);
 
     res.status(201).json({ message: 'Review created', review });
   } catch (error) {

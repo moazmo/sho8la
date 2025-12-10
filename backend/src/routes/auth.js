@@ -1,17 +1,16 @@
 const express = require('express');
 const User = require('../models/User');
 const { generateToken } = require('../config/jwt');
+const { validators } = require('../middleware/validate');
+const { limiters } = require('../middleware/rateLimit');
+const { sendEmail } = require('../services/email');
 
 const router = express.Router();
 
 // Register
-router.post('/register', async (req, res) => {
+router.post('/register', limiters.auth, validators.register, async (req, res, next) => {
   try {
     const { email, password, name, role, university } = req.body;
-
-    if (!email || !password || !name || !role) {
-      return res.status(400).json({ error: 'Missing required fields' });
-    }
 
     const existingUser = await User.findOne({ email });
     if (existingUser) {
@@ -21,6 +20,9 @@ router.post('/register', async (req, res) => {
     const user = new User({ email, password, name, role, university });
     await user.save();
 
+    // Send welcome email
+    sendEmail(email, 'welcome', name);
+
     const token = generateToken(user._id);
     res.status(201).json({
       message: 'User registered successfully',
@@ -28,19 +30,14 @@ router.post('/register', async (req, res) => {
       user: { id: user._id, email: user.email, name: user.name, role: user.role }
     });
   } catch (error) {
-    console.error('❌ Register error:', error);
-    res.status(500).json({ error: error.message });
+    next(error);
   }
 });
 
 // Login
-router.post('/login', async (req, res) => {
+router.post('/login', limiters.auth, validators.login, async (req, res, next) => {
   try {
     const { email, password } = req.body;
-
-    if (!email || !password) {
-      return res.status(400).json({ error: 'Email and password required' });
-    }
 
     const user = await User.findOne({ email });
     if (!user || !(await user.comparePassword(password))) {
@@ -54,8 +51,7 @@ router.post('/login', async (req, res) => {
       user: { id: user._id, email: user.email, name: user.name, role: user.role }
     });
   } catch (error) {
-    console.error('❌ Login error:', error);
-    res.status(500).json({ error: error.message });
+    next(error);
   }
 });
 

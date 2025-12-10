@@ -1,6 +1,6 @@
 const express = require('express');
 const Message = require('../models/Message');
-const authMiddleware = require('../middleware/auth');
+const { authOnly } = require('../middleware/roleAuth');
 
 const router = express.Router();
 
@@ -52,7 +52,7 @@ router.get('/user/:userId', async (req, res) => {
 });
 
 // Send message
-router.post('/', authMiddleware, async (req, res) => {
+router.post('/', authOnly, async (req, res) => {
   try {
     const { conversationId, receiverId, text } = req.body;
 
@@ -76,7 +76,7 @@ router.post('/', authMiddleware, async (req, res) => {
 });
 
 // Mark as read
-router.put('/:id/read', authMiddleware, async (req, res) => {
+router.put('/:id/read', authOnly, async (req, res) => {
   try {
     const message = await Message.findByIdAndUpdate(req.params.id, { read: true }, { new: true });
     res.json({ message: 'Marked as read', message });

@@ -1,6 +1,6 @@
 const express = require('express');
 const Job = require('../models/Job');
-const authMiddleware = require('../middleware/auth');
+const { authOnly, clientOnly } = require('../middleware/roleAuth');
 
 const router = express.Router();
 
@@ -32,13 +32,27 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// Create job (requires auth)
-router.post('/', authMiddleware, async (req, res) => {
+// Create job (requires auth + sufficient funds)
+router.post('/', clientOnly, async (req, res) => {
   try {
     const { title, description, budget, category, skills } = req.body;
 
     if (!title || !description || !budget || !category) {
       return res.status(400).json({ error: 'Missing required fields' });
+    }
+
+    // Check wallet balance
+    const Wallet = require('../models/Wallet');
+    let wallet = await Wallet.findOne({ userId: req.userId });
+    if (!wallet) {
+      wallet = new Wallet({ userId: req.userId });
+      await wallet.save();
+    }
+
+    if (wallet.balance < budget) {
+      return res.status(400).json({
+        error: `Insufficient funds. You have ${wallet.balance} EGP but need ${budget} EGP. Please add funds to your wallet first.`
+      });
     }
 
     const job = new Job({
@@ -58,7 +72,7 @@ router.post('/', authMiddleware, async (req, res) => {
 });
 
 // Update job (only by client)
-router.put('/:id', authMiddleware, async (req, res) => {
+router.put('/:id', clientOnly, async (req, res) => {
   try {
     const job = await Job.findById(req.params.id);
     if (!job) return res.status(404).json({ error: 'Job not found' });
@@ -76,7 +90,7 @@ router.put('/:id', authMiddleware, async (req, res) => {
 });
 
 // Delete job (only by client)
-router.delete('/:id', authMiddleware, async (req, res) => {
+router.delete('/:id', clientOnly, async (req, res) => {
   try {
     const job = await Job.findById(req.params.id);
     if (!job) return res.status(404).json({ error: 'Job not found' });
