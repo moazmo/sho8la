@@ -38,7 +38,8 @@ Sho8la is more than just a marketplace. It's a community where verified students
 ## 🛠️ Tech Stack
 
 **Frontend**: Next.js 14 • TypeScript • React • Tailwind CSS • Lucide Icons  
-**Backend**: Express.js • Node.js • REST API  
+**Backend**: Express.js • Node.js • REST API • Nodemailer
+**Payments**: Paymob Integration (Cards & Mobile Wallets)
 **Database**: MongoDB Atlas (Cloud)  
 **Authentication**: JWT + bcrypt  
 **State Management**: React Context + localStorage
@@ -131,16 +132,16 @@ Frontend runs on: `http://localhost:3000`
 ✅ **Responsive Design** - Works perfectly on mobile & desktop  
 ✅ **Enterprise Backend** - Robust, scalable architecture  
 
+✅ **Smart Job System** - Post, browse, and manage jobs efficiently
+✅ **Direct Messaging** - Real-time chat for smooth collaboration
+✅ **Paymob Integration** - Securely add funds via Card or Mobile Wallet
+✅ **Proposal System** - Submit and review detailed project proposals
+✅ **Reviews & Ratings** - Build trust with verified feedback
+
 ## 🚀 Coming Soon
 
-- 💼 Job browsing and posting
-- 📝 Proposal management
-- 💬 Real-time messaging
-- ⭐ Reviews and ratings
-- 📧 Email notifications
-- 🎓 University ID verification
-- 💳 Real payment integration
-- 📊 Admin dashboard
+- 🎓 University ID verification (Enhanced automated checks)
+- 📊 Advanced Analytics Dashboard
 
 ## 🛡️ Quality Assurance
 

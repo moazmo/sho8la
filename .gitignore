@@ -1,5 +1,5 @@
 # IDE & Editor folders
-.github/
+
 .kilocode/
 .kiro/
 .roo/
@@ -15,7 +15,6 @@
 
 # Dependencies
 node_modules/
-package-lock.json
 yarn.lock
 
 # Next.js
