@@ -1,0 +1,68 @@
+[
+  {
+    "id": "1",
+    "title": "Build a Landing Page for 'Cairo Coffee House'",
+    "client": "Ahmed Hassan (Cairo Coffee)",
+    "description": "We need a modern, single-page website for our new branch in Maadi. It must show our menu, location on Google Maps, and a 'Contact Us' form. Design must be responsive for mobile phones.",
+    "budget": "3000 - 5000 EGP",
+    "category": "Web Development",
+    "status": "Open",
+    "postedAt": "2025-12-05T10:00:00Z",
+    "skills": ["HTML", "CSS", "React", "Tailwind"]
+  },
+  {
+    "id": "2",
+    "title": "Fix Python Script for Data Analysis",
+    "client": "Sarah El-Mahdy",
+    "description": "I have a Python script for my graduation project that scrapes data from a news site, but it keeps crashing with a 'KeyError'. I need someone to debug it and make it save the data to a CSV file correctly.",
+    "budget": "500 - 800 EGP",
+    "category": "Data Science",
+    "status": "Open",
+    "postedAt": "2025-12-04T14:30:00Z",
+    "skills": ["Python", "Pandas", "Web Scraping"]
+  },
+  {
+    "id": "3",
+    "title": "Logo Design for 'Al-Amal Pharmacy'",
+    "client": "Dr. Mohamed Youssef",
+    "description": "We are opening a new pharmacy in Nasr City. We need a professional logo that uses Green and White colors. Please provide 3 variations.",
+    "budget": "1000 - 1500 EGP",
+    "category": "Graphic Design",
+    "status": "In Progress",
+    "postedAt": "2025-12-03T09:15:00Z",
+    "skills": ["Photoshop", "Illustrator", "Branding"]
+  },
+  {
+    "id": "4",
+    "title": "Inventory System for Mobile Shop",
+    "client": "Mobile Tech Shop",
+    "description": "I own a small mobile shop and need a simple desktop app to track my phones and accessories. I want to add items, see stock count, and record sales. Needs to be in Arabic if possible.",
+    "budget": "8000 - 10000 EGP",
+    "category": "Software Development",
+    "status": "Open",
+    "postedAt": "2025-12-02T11:45:00Z",
+    "skills": ["C#", "Java", "Database", "Desktop App"]
+  },
+  {
+    "id": "5",
+    "title": "Convert Figma Design to HTML/CSS",
+    "client": "Startup Hub Egypt",
+    "description": "We have a completed design in Figma for our 'About Us' page. We need a frontend developer to convert it into pixel-perfect HTML/CSS code.",
+    "budget": "2000 EGP",
+    "category": "Web Development",
+    "status": "Completed",
+    "postedAt": "2025-11-30T16:20:00Z",
+    "skills": ["Figma", "HTML5", "CSS3"]
+  },
+  {
+    "id": "6",
+    "title": "Help with Machine Learning Model (Regression)",
+    "client": "Omar Khaled",
+    "description": "I am stuck on a task to predict housing prices in Cairo using a dataset. My model has very low accuracy. I need an ML engineer to review my Jupyter Notebook and improve the model.",
+    "budget": "1500 - 2500 EGP",
+    "category": "Machine Learning",
+    "status": "Open",
+    "postedAt": "2025-12-06T08:00:00Z",
+    "skills": ["Python", "Scikit-Learn", "Jupyter"]
+  }
+]
