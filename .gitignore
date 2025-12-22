@@ -22,9 +22,13 @@ yarn.lock
 out/
 dist/
 
-# Environment
+# Environment files (CRITICAL: Never commit these)
+.env
+.env.*
 .env.local
 .env.*.local
+backend/.env
+*.env
 
 # OS
 .DS_Store

@@ -12,6 +12,7 @@ Before you begin, ensure you have the following installed:
 - **A modern web browser** (Chrome, Edge, Firefox)
 
 To check if Node.js is installed:
+
 ```bash
 node --version
 npm --version
@@ -46,6 +47,7 @@ npm start
 ```
 
 You should see:
+
 ```
 🚀 Sho8la API running at http://localhost:3000
 ```
@@ -60,6 +62,7 @@ Open a new terminal/file explorer and:
 Navigate to `Simple_frontend/index.html` and double-click to open in browser.
 
 **Option B: Use the full path in browser**
+
 ```
 file:///C:/path/to/sho8la/Simple_frontend/index.html
 ```
@@ -73,7 +76,7 @@ If you have the Live Server extension, right-click `index.html` → "Open with L
 
 | Role | Email | Password |
 |------|-------|----------|
-| **Admin** | admin@sho8la.com | admin123 |
+| **Admin** | <admin@sho8la.com> | demo_password_123 |
 | **Freelancer** | Any email you create | Any password |
 | **Client** | Any email you create | Any password |
 
@@ -170,6 +173,7 @@ The backend runs at `http://localhost:3000/api`
 ## ⚡ Features Implemented
 
 ### For Freelancers
+
 - ✅ Browse and search jobs
 - ✅ Submit proposals with bid amount
 - ✅ Real-time chat with clients
@@ -178,6 +182,7 @@ The backend runs at `http://localhost:3000/api`
 - ✅ Profile with ratings
 
 ### For Clients
+
 - ✅ Post jobs with budget and skills
 - ✅ Review and accept proposals
 - ✅ Real-time chat with freelancers
@@ -186,6 +191,7 @@ The backend runs at `http://localhost:3000/api`
 - ✅ Add funds to wallet
 
 ### For Admin
+
 - ✅ Dashboard with platform stats
 - ✅ Approve/reject student verifications
 
@@ -194,23 +200,29 @@ The backend runs at `http://localhost:3000/api`
 ## 🛠️ Troubleshooting
 
 ### "Cannot connect to API" or "API Error"
+
 - Make sure the backend is running (`npm start` in Simple_backend)
 - Check that port 3000 is not in use by another application
 
 ### "CORS Error"
+
 - The backend includes CORS headers. If issues persist, use a proper HTTP server for the frontend instead of file://
 
 ### Using Live Server (VS Code)
+
 If using VS Code Live Server extension, update `API_URL` in `script.js`:
+
 ```javascript
 var API_URL = 'http://localhost:3000/api';  // Keep as is
 ```
 
 ### Resetting Data
+
 To start fresh, replace `data.json` content with:
+
 ```json
 {
-  "users": [{"id":"admin","name":"Admin","email":"admin@sho8la.com","password":"admin123","role":"admin"}],
+  "users": [{"id":"admin","name":"Admin","email":"admin@sho8la.com","password":"demo_password_123","role":"admin"}],
   "jobs": [],
   "proposals": [],
   "verifications": [],

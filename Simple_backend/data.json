@@ -4,20 +4,20 @@
       "id": "admin",
       "name": "Admin",
       "email": "admin@sho8la.com",
-      "password": "admin123",
+      "password": "demo_password_123",
       "role": "admin"
     },
     {
       "id": "u1765162199857",
       "email": "moaz@gmail.com",
-      "password": "moazmo27",
+      "password": "demo_password_123",
       "name": "Moaz",
       "role": "freelancer"
     },
     {
       "id": "u1765162317027",
       "email": "moaz_1@gmail.com",
-      "password": "moazmo27",
+      "password": "demo_password_123",
       "name": "Moaz_1",
       "role": "client"
     }
@@ -259,6 +259,15 @@
       "to": "u1765162317027",
       "toName": "Moaz_1",
       "text": "Hiiiii how r u missed u man"
+    },
+    {
+      "id": 1766169185952,
+      "time": "2025-12-19T18:33:05.952Z",
+      "from": "u1765162199857",
+      "fromName": "Moaz",
+      "to": "u1765162317027",
+      "toName": "Moaz_1",
+      "text": "اهلا"
     }
   ],
   "reviews": [
